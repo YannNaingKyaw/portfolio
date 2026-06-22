@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@page { margin: 0; size: A4; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9pt;
+  color: #2c3e50;
+  line-height: 1.38;
+  background: #e8e8e8;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* ═══ HEADER ═══ */
+.header-table { width: 100%; border-collapse: collapse; }
+.header-cell {
+  background: #1a2a4a;
+  padding: 22px 32px 18px 32px;
+  color: #fff;
+  vertical-align: middle;
+}
+.header-photo-cell {
+  background: #1a2a4a;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle;
+  padding-right: 28px;
+}
+.header-photo {
+  width: 88px;
+  height: 112px;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+
+.header-name {
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.header-title {
+  font-size: 10.5pt;
+  color: #7eb8e0;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.header-contact {
+  margin-top: 6px;
+  font-size: 7.8pt;
+  color: #b0c4d8;
+  line-height: 1.6;
+}
+.header-contact .sep { margin: 0 10px; color: rgba(255,255,255,0.15); }
+
+/* ═══ CONTENT TABLE ═══ */
+.content-table { width: 100%; border-collapse: collapse; }
+
+/* SIDEBAR */
+.sidebar-cell {
+  width: 165px;
+  padding: 16px 12px 16px 24px;
+  background: #f4f6f9;
+  vertical-align: top;
+}
+
+.sb-title {
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: #1a2a4a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid #1a2a4a;
+  margin-bottom: 5px;
+}
+
+.sb-item { margin-bottom: 2px; }
+.sb-item .label { font-size: 7pt; font-weight: 600; color: #34495e; }
+.sb-item .value { font-size: 7pt; color: #555; }
+
+.sb-divider { height: 1px; background: #d5dde8; margin: 7px 0; }
+
+.skill-group { margin-bottom: 5px; }
+.skill-group .cat { font-size: 7pt; font-weight: 600; color: #1a2a4a; margin-bottom: 1px; }
+.skill-tag {
+  display: inline-block;
+  background: #dce3ec;
+  color: #1a2a4a;
+  font-size: 6.5pt;
+  padding: 1px 5px;
+  border-radius: 2px;
+  margin: 1px 1px 1px 0;
+  font-weight: 500;
+}
+
+/* MAIN */
+.main-cell {
+  padding: 16px 24px 16px 16px;
+  vertical-align: top;
+}
+
+.sec-title {
+  font-size: 9pt;
+  font-weight: 700;
+  color: #1a2a4a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #1a2a4a;
+  margin-bottom: 5px;
+}
+
+.summary-text {
+  font-size: 7.8pt;
+  color: #444;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 8px;
+}
+
+.exp-item { margin-bottom: 8px; }
+.exp-header { margin-bottom: 1px; }
+.exp-role { font-size: 8.5pt; font-weight: 700; color: #1a2a4a; }
+.exp-company { font-size: 7.8pt; font-weight: 600; color: #4a6a8a; }
+.exp-date { font-size: 7pt; color: #999; float: right; }
+
+.exp-bullets {
+  list-style: none;
+  margin: 2px 0 0 0;
+  padding: 0;
+}
+.exp-bullets li {
+  font-size: 7.3pt;
+  color: #444;
+  padding-left: 10px;
+  margin-bottom: 1px;
+  line-height: 1.45;
+  position: relative;
+}
+.exp-bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #4a6a8a;
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cert-list li {
+  font-size: 7.5pt;
+  color: #444;
+  padding-left: 10px;
+  margin-bottom: 1px;
+  position: relative;
+  line-height: 1.4;
+}
+.cert-list li::before { content: '▸'; position: absolute; left: 0; color: #4a6a8a; }
+.cert-list li strong { color: #2c3e50; }
+.cert-list li .cert-badge {
+  font-size: 6.5pt;
+  display: inline-block;
+  padding: 0 5px;
+  border-radius: 2px;
+  margin-left: 2px;
+}
+.cert-list li .cert-badge.certified { background: #dce8f5; color: #1a2a4a; }
+.cert-list li .cert-badge.training { background: #e8e8e8; color: #666; }
+
+.equip-text {
+  font-size: 7.5pt;
+  color: #555;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<table class="header-table">
+<tr>
+  <td class="header-cell">
+    <div class="header-name">Yan Naing Kyaw</div>
+    <div class="header-title">Senior Network &amp; Solution Engineer</div>
+    <div class="header-contact">
+      ✉ ynk.engineer@gmail.com <span class="sep">|</span>
+      📞 +66 06-3327-5176 <span class="sep">|</span>
+      🔗 linkedin.com/in/yann-naing-kyaw-3ba69a10a <br>
+      🌐 yannaingkyaw.github.io/portfolio <span class="sep">|</span>
+      📍 Bangkok, Thailand
+    </div>
+  </td>
+  <td class="header-photo-cell">
+    <img class="header-photo" src="ynk_photo.png" alt="Photo">
+  </td>
+</tr>
+</table>
+
+<!-- CONTENT -->
+<table class="content-table">
+<tr>
+
+  <!-- SIDEBAR -->
+  <td class="sidebar-cell">
+
+    <div class="sb-title">Skills</div>
+
+    <div class="skill-group">
+      <div class="cat">Routing &amp; Switching</div>
+      <span class="skill-tag">BGP</span>
+      <span class="skill-tag">OSPF</span>
+      <span class="skill-tag">IS-IS</span>
+      <span class="skill-tag">MP-BGP</span>
+      <span class="skill-tag">L2/L3 Design</span>
+      <span class="skill-tag">VLAN</span>
+      <span class="skill-tag">STP</span>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">MPLS &amp; WAN</div>
+      <span class="skill-tag">MPLS</span>
+      <span class="skill-tag">MPLS VPN</span>
+      <span class="skill-tag">Traffic Engineering</span>
+      <span class="skill-tag">QoS</span>
+      <span class="skill-tag">SD-WAN</span>
+      <span class="skill-tag">VPN</span>
+      <span class="skill-tag">IP Transit</span>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">Service Provider</div>
+      <span class="skill-tag">FTTH</span>
+      <span class="skill-tag">DIA</span>
+      <span class="skill-tag">IGW</span>
+      <span class="skill-tag">eBGP/iBGP</span>
+      <span class="skill-tag">CDN Peering</span>
+      <span class="skill-tag">Capacity Planning</span>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">Security</div>
+      <span class="skill-tag">Cisco FTD</span>
+      <span class="skill-tag">ASA</span>
+      <span class="skill-tag">FMC</span>
+      <span class="skill-tag">FortiGate</span>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">Data Center</div>
+      <span class="skill-tag">Cisco ACI</span>
+      <span class="skill-tag">Nexus</span>
+      <span class="skill-tag">UCS</span>
+      <span class="skill-tag">FWaaS</span>
+    </div>
+
+    <div class="skill-group">
+      <div class="cat">Monitoring &amp; Voice</div>
+      <span class="skill-tag">Zabbix</span>
+      <span class="skill-tag">SNMP</span>
+      <span class="skill-tag">Cacti</span>
+      <span class="skill-tag">VoIP / SIP</span>
+    </div>
+
+    <div class="sb-divider"></div>
+
+    <div class="sb-title">Languages</div>
+    <div class="sb-item"><span class="label">English</span><br><span class="value">Professional Working</span></div>
+    <div class="sb-item"><span class="label">Burmese</span><br><span class="value">Native</span></div>
+    <div class="sb-item"><span class="label">Thai</span><br><span class="value">Basic</span></div>
+
+    <div class="sb-divider"></div>
+
+    <div class="sb-title">Education</div>
+    <div class="sb-item"><span class="label">B.A. English</span><br><span class="value">Mandalay University, 2011–2016</span></div>
+
+  </td>
+
+  <!-- MAIN -->
+  <td class="main-cell">
+
+    <div class="sec-title">Professional Summary</div>
+    <p class="summary-text">
+      Senior Network Engineer with 13+ years of experience in ISP core networks, routing protocols, MPLS, and service provider infrastructure. Specialized in BGP/OSPF/IS-IS, MPLS VPN, data center networking, and large-scale network design. Proven track record operating nationwide backbone networks and leading critical escalation response.
+    </p>
+
+    <div class="sec-title">Experience</div>
+
+    <!-- Planetcomm -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Network &amp; Solution Engineer</span>
+        <span class="exp-date">Jun 2024 – Present</span>
+      </div>
+      <div class="exp-company">Planetcomm / Planetcloud, Bangkok, Thailand</div>
+      <ul class="exp-bullets">
+        <li>Engineered multi-tenant network architecture (VLANs, VPNs, firewalls, routing) ensuring isolation and scalability</li>
+        <li>Applied Cisco ACI for policy-driven data center networking</li>
+        <li>Delivered Smart City network solutions integrating video surveillance, IoT, and central management</li>
+        <li>Designed and implemented SPDC Data Center and FWaaS firewall solutions</li>
+        <li>Collaborated with cross-vendor teams for integrated network and infrastructure deployments</li>
+      </ul>
+    </div>
+
+    <!-- Global Tech -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Senior Core Network Engineer</span>
+        <span class="exp-date">Dec 2011 – Jun 2024</span>
+      </div>
+      <div class="exp-company">Global Technology Co., Ltd., Myanmar</div>
+      <ul class="exp-bullets">
+        <li>Operated nationwide ISP core network infrastructure supporting millions of users</li>
+        <li>Designed and implemented IP Transit, MPLS VPN, FTTH, DIA, and WAN services</li>
+        <li>Led L2/L3 escalation response for critical nationwide network outages</li>
+        <li>Built International Gateway networks with eBGP/iBGP peering and global CDNs (Google, Facebook, Netflix)</li>
+        <li>Deployed MPLS core network using IS-IS, MP-BGP, Traffic Engineering, and QoS</li>
+        <li>Conducted capacity planning and 160G–400G backbone upgrades</li>
+        <li>Expanded POP sites and multi-service platforms for high availability and redundancy</li>
+      </ul>
+    </div>
+
+    <!-- Smart City -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Smart City &amp; Network Projects</span>
+        <span class="exp-date">2018 – Present</span>
+      </div>
+      <div class="exp-company">Various Projects</div>
+      <ul class="exp-bullets">
+        <li>Designed Smart City network infrastructure for urban surveillance and IoT integration</li>
+        <li>Built secure, high-availability connectivity between edge devices, data centers, and private clouds</li>
+      </ul>
+    </div>
+
+    <div class="sec-title">Certifications &amp; Training</div>
+    <ul class="cert-list">
+      <li><strong>Cisco Certified Specialist – ENARSI</strong> <span class="cert-badge certified">Cisco Certified</span></li>
+      <li><strong>CCIE Service Provider</strong> <span class="cert-badge training">Training</span></li>
+      <li><strong>CCIE Enterprise Infrastructure</strong> <span class="cert-badge training">Training</span></li>
+      <li><strong>CCNP Routing &amp; Switching</strong> <span class="cert-badge training">Training</span></li>
+    </ul>
+
+    <div class="sec-title">Hands-On Equipment</div>
+    <p class="equip-text">
+      Cisco ASR9K, NCS 5500/6000, Juniper MX, Nexus 9K/7K/5K/2K, Catalyst 9K, Cisco UCS, Cisco ACI, Cisco FMC/FTD/ASA, FortiGate, MikroTik, Zabbix
+    </p>
+
+  </td>
+</tr>
+</table>
+
+</div>
+</body>
+</html>
