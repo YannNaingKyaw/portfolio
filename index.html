@@ -200,7 +200,7 @@
             border-radius: 50%;
         }
 
-        /* Summary / About */
+        /* Summary */
         .summary {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -211,7 +211,22 @@
             line-height: 1.8;
         }
 
-        /* Certs grid */
+        /* Skills block */
+        .skills-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.9;
+        }
+
+        .skills-block strong {
+            color: var(--accent);
+        }
+
+        /* Certs */
         .certs-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -249,6 +264,17 @@
         .cert-item .cert-stat.training {
             background: rgba(100, 100, 120, 0.15);
             color: #8a9bb5;
+        }
+
+        /* Equipment */
+        .equip-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            line-height: 1.8;
         }
 
         /* Footer */
@@ -291,7 +317,6 @@
             background: transparent;
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
             .container { padding: 30px 16px; }
             .hero { padding: 40px 0 36px; }
@@ -312,48 +337,55 @@
         <div class="title">Senior Network &amp; Solution Engineer</div>
         <div class="location">Bangkok, Thailand <span>·</span> +66 06-3327-5176 <span>·</span> Line: ynk139</div>
         <div class="nodes">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
         </div>
     </div>
 
     <!-- Summary -->
     <div class="section">
-        <div class="section-header">
-            <span class="icon">■</span>
-            <h2>Profile</h2>
-        </div>
+        <div class="section-header"><span class="icon">■</span><h2>Profile</h2></div>
         <div class="summary">
-            Senior Network Engineer with 13+ years of experience in ISP core networks, routing protocols, MPLS, and service provider infrastructure. Specialized in BGP/OSPF/IS-IS, MPLS VPN, data center networking, and large-scale network design. Proven track record operating nationwide backbone networks and leading critical escalation response.
+            Senior Network, Cloud &amp; Infrastructure Engineer with 10+ years of experience across ISP, system integrator, private cloud, and Smart City environments. Expert in Cisco HyperFlex (HCI), VMware vCenter, Cisco UCS, Cisco ACI, and MicroCloud implementation. Proven success designing, deploying, and operating large-scale, high-availability networks and Smart City platforms integrating video surveillance, IoT, and AI analytics.
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <div class="section-header"><span class="icon">◆</span><h2>Core Skills &amp; Technologies</h2></div>
+        <div class="skills-block">
+            <strong>Networking:</strong> BGP, OSPF, IS-IS, MPLS, MP-BGP, SD-WAN, VPN, VLAN, L2/L3 design<br>
+            <strong>Cloud &amp; Virtualization:</strong> Cisco HyperFlex (HCI), Cisco UCS, VMware vCenter/ESXi, Private Cloud, MicroCloud<br>
+            <strong>Data Center &amp; Automation:</strong> Cisco ACI, UCS Manager, Firewall-as-a-Service (FWaaS)<br>
+            <strong>Security:</strong> Cisco FTD/ASA/FMC, FortiGate<br>
+            <strong>Smart City &amp; IoT:</strong> AI VMS (Eocortex, Scylla AI), IoT connectivity, GPU infrastructure<br>
+            <strong>Monitoring:</strong> Zabbix, SNMP, Cacti<br>
+            <strong>Voice &amp; PBX:</strong> Cloud PBX, VoIP, SIP Trunking
         </div>
     </div>
 
     <!-- Experience -->
     <div class="section">
-        <div class="section-header">
-            <span class="icon">◆</span>
-            <h2>Experience</h2>
-        </div>
+        <div class="section-header"><span class="icon">●</span><h2>Experience</h2></div>
 
         <div class="exp-card">
             <div class="role">Network &amp; Solution Engineer</div>
-            <div class="company">Planetcomm / Planetcloud</div>
+            <div class="company">PLANETCOMM / PLANETCLOUD</div>
             <div class="period">June 2024 – Present &nbsp;·&nbsp; Bangkok, Thailand</div>
             <ul>
+                <li>Designed and operated Cisco HyperFlex HCI and UCS-based private cloud environments</li>
+                <li>Managed virtualization infrastructure using VMware vCenter and automated provisioning workflows</li>
+                <li>Implemented MicroCloud environments for rapid POC and edge deployments</li>
                 <li>Engineered multi-tenant network architecture (VLANs, VPNs, firewalls, routing) ensuring isolation and scalability</li>
                 <li>Applied Cisco ACI for policy-driven data center networking</li>
                 <li>Delivered Smart City network solutions integrating video surveillance, IoT, and central management</li>
-                <li>Designed and implemented SPDC Data Center and FWaaS firewall solutions</li>
-                <li>Collaborated with cross-vendor teams for integrated network and infrastructure deployments</li>
+                <li>Designed and implemented SPDC Data Center and FWaaS solutions</li>
+                <li>Collaborated with cross-vendor teams for integrated cloud and Smart City deployments</li>
             </ul>
         </div>
 
         <div class="exp-card">
             <div class="role">Senior Core Network Engineer</div>
-            <div class="company">Global Technology Co., Ltd.</div>
+            <div class="company">GLOBAL TECHNOLOGY CO., LTD.</div>
             <div class="period">December 2011 – June 2024 &nbsp;·&nbsp; Myanmar</div>
             <ul>
                 <li>Operated and maintained nationwide ISP core network infrastructure supporting millions of users</li>
@@ -367,11 +399,12 @@
         </div>
 
         <div class="exp-card">
-            <div class="role">Smart City &amp; Network Projects</div>
-            <div class="company">Various Projects</div>
-            <div class="period">2018 – Present</div>
+            <div class="role">Smart City &amp; AI Platform Projects</div>
+            <div class="period">Various Projects</div>
             <ul>
                 <li>Designed Smart City network infrastructure for urban surveillance and IoT integration</li>
+                <li>Deployed AI VMS (Eocortex, Scylla AI) with facial recognition, object detection, and behavior analytics</li>
+                <li>Architected GPU-enabled edge and data center environments for real-time AI inference</li>
                 <li>Built secure, high-availability connectivity between edge devices, data centers, and private clouds</li>
             </ul>
         </div>
@@ -379,10 +412,7 @@
 
     <!-- Certifications -->
     <div class="section">
-        <div class="section-header">
-            <span class="icon">◇</span>
-            <h2>Certifications &amp; Training</h2>
-        </div>
+        <div class="section-header"><span class="icon">◇</span><h2>Certifications &amp; Training</h2></div>
         <div class="certs-grid">
             <div class="cert-item">
                 <div class="label">Cisco Certified</div>
@@ -391,19 +421,35 @@
             </div>
             <div class="cert-item">
                 <div class="label">Training</div>
-                CCIE Service Provider
+                CCIE Service Provider – BIM
                 <div class="cert-stat training">Training</div>
             </div>
             <div class="cert-item">
                 <div class="label">Training</div>
-                CCIE Enterprise Infrastructure
+                CCIE Enterprise Infrastructure – Sai Nyan Lynn (3× CCIE)
                 <div class="cert-stat training">Training</div>
             </div>
             <div class="cert-item">
                 <div class="label">Training</div>
-                CCNP Routing &amp; Switching
+                CCNP Routing &amp; Switching – Aung Naing Moe
                 <div class="cert-stat training">Training</div>
             </div>
+        </div>
+    </div>
+
+    <!-- Hands-On -->
+    <div class="section">
+        <div class="section-header"><span class="icon">▣</span><h2>Hands-On Devices</h2></div>
+        <div class="equip-block">
+            Cisco ASR 9010/9006/7710/1001/903/920 | Cisco NCS 540/520 | Cisco ISR 4321 | Cisco Catalyst 3650/4508/6504/C8300 | Cisco Nexus 3524 | Cisco ASA/FTD/FMC | FortiGate 30E/60E | Huawei NetEngine 8000 | SIP &amp; Voice Platforms
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <div class="section-header"><span class="icon">○</span><h2>Education</h2></div>
+        <div class="equip-block">
+            <strong>Bachelor of Arts in English</strong> — Mandalaya University, Myanmar (2011–2016)
         </div>
     </div>
 
@@ -419,6 +465,5 @@
     </div>
 
 </div>
-
 </body>
 </html>
