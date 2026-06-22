@@ -8,11 +8,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg: #0a0e14;
-            --surface: #111820;
-            --border: #1a2633;
-            --accent: #00e5a0;
-            --accent-dim: rgba(0, 229, 160, 0.15);
+            --bg: #0b111e;
+            --surface: #111827;
+            --border: #1e293b;
+            --accent: #4a7da8;
+            --accent-dim: rgba(74, 125, 168, 0.12);
             --text: #d4dce8;
             --text-dim: #6a7a8a;
             --text-muted: #4a5568;
@@ -26,13 +26,12 @@
             min-height: 100vh;
         }
 
-        /* Background network grid */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             background-image:
-                radial-gradient(circle at 1px 1px, rgba(0, 229, 160, 0.06) 1px, transparent 0);
+                radial-gradient(circle at 1px 1px, rgba(74, 125, 168, 0.06) 1px, transparent 0);
             background-size: 40px 40px;
             pointer-events: none;
             z-index: 0;
@@ -89,7 +88,6 @@
             color: var(--text-muted);
         }
 
-        /* Network animation dots */
         .hero .nodes {
             display: flex;
             justify-content: center;
@@ -131,6 +129,7 @@
 
         .section-header .icon {
             font-size: 1.1rem;
+            color: var(--accent);
         }
 
         .section-header h2 {
@@ -152,7 +151,7 @@
         }
 
         .exp-card:hover {
-            border-color: rgba(0, 229, 160, 0.3);
+            border-color: rgba(74, 125, 168, 0.3);
         }
 
         .exp-card .role {
@@ -236,32 +235,34 @@
             margin-bottom: 4px;
         }
 
-        /* Education */
-        .edu-item {
+        .cert-item .cert-stat {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 1px 8px;
+            border-radius: 3px;
+            margin-top: 4px;
+        }
+        .cert-item .cert-stat.certified {
+            background: rgba(74, 125, 168, 0.15);
+            color: var(--accent);
+        }
+        .cert-item .cert-stat.training {
+            background: rgba(100, 100, 120, 0.15);
+            color: #8a9bb5;
+        }
+
+        /* Equipment */
+        .equip-text {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 18px 22px;
-        }
-
-        .edu-item .degree {
-            color: #fff;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .edu-item .school {
+            border-radius: 10px;
+            padding: 20px 24px;
+            font-size: 0.88rem;
             color: var(--text-dim);
-            font-size: 0.85rem;
+            line-height: 1.8;
         }
 
-        .edu-item .year {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            margin-top: 2px;
-        }
-
-        /* Footer / Contact */
+        /* Footer */
         .footer {
             margin-top: 60px;
             padding-top: 30px;
@@ -270,14 +271,14 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
 
         .footer a {
             color: var(--text-dim);
             text-decoration: none;
-            font-size: 0.88rem;
-            padding: 10px 22px;
+            font-size: 0.85rem;
+            padding: 10px 20px;
             border: 1px solid var(--border);
             border-radius: 8px;
             transition: all 0.2s;
@@ -320,7 +321,7 @@
     <div class="hero">
         <h1>Yan Naing Kyaw</h1>
         <div class="title">Senior Network &amp; Solution Engineer</div>
-        <div class="location">Bangkok, Thailand <span>·</span> +66 06-3327-5176</div>
+        <div class="location">Bangkok, Thailand <span>·</span> +66 06-3327-5176 <span>·</span> Line: ynk139</div>
         <div class="nodes">
             <div class="dot"></div>
             <div class="dot"></div>
@@ -337,7 +338,7 @@
             <h2>Profile</h2>
         </div>
         <div class="summary">
-            Senior Network, Cloud &amp; Infrastructure Engineer with 10+ years of experience across ISP, system integrator, private cloud, and Smart City environments. Expert in Cisco HyperFlex (HCI), VMware vCenter, Cisco UCS, Cisco ACI, and MicroCloud implementation. Proven success designing, deploying, and operating large-scale, high-availability networks and Smart City platforms integrating video surveillance, IoT, and AI analytics.
+            Senior Network, Cloud &amp; Infrastructure Engineer with 13+ years of experience across ISP, system integrator, private cloud, and Smart City environments. Expert in Cisco HyperFlex (HCI), VMware vCenter, Cisco UCS, Cisco ACI, and MicroCloud. Proven success designing, deploying, and operating large-scale, high-availability networks and Smart City platforms integrating video surveillance, IoT, and AI analytics.
         </div>
     </div>
 
@@ -360,7 +361,6 @@
                 <li>Applied Cisco ACI for policy-driven data center networking</li>
                 <li>Delivered Smart City network solutions integrating video surveillance, IoT, and central management</li>
                 <li>Designed and implemented SPDC Data Center and FWaaS solutions</li>
-                <li>Collaborated with cross-vendor teams for integrated cloud and Smart City deployments</li>
             </ul>
         </div>
 
@@ -381,11 +381,11 @@
 
         <div class="exp-card">
             <div class="role">Smart City &amp; AI Platform Projects</div>
-            <div class="company">Planetcomm / Planetcloud</div>
-            <div class="period">2024 – Present</div>
+            <div class="company">Various Projects</div>
+            <div class="period">2018 – Present</div>
             <ul>
                 <li>Designed Smart City network infrastructure for urban surveillance and IoT integration</li>
-                <li>Deployed AI VMS (Eocortex, Scylla AI) with facial recognition, object detection, and behavior analytics</li>
+                <li>Deployed AI VMS (Eocortex, Scylla AI) with facial recognition, object detection, and analytics</li>
                 <li>Architected GPU-enabled edge and data center environments for real-time AI inference</li>
                 <li>Built secure, high-availability connectivity between edge devices, data centers, and private clouds</li>
             </ul>
@@ -396,49 +396,62 @@
     <div class="section">
         <div class="section-header">
             <span class="icon">◇</span>
-            <h2>Certifications</h2>
+            <h2>Certifications &amp; Training</h2>
         </div>
         <div class="certs-grid">
             <div class="cert-item">
-                <div class="label">Cisco</div>
-                Cisco Certified Specialist &ndash; ENARSI
+                <div class="label">Cisco Certified</div>
+                Cisco Certified Specialist – ENARSI
+                <div class="cert-stat certified">✓ Certified</div>
             </div>
             <div class="cert-item">
                 <div class="label">Training</div>
-                CCIE Service Provider &ndash; BIM
+                CCIE Service Provider
+                <div class="cert-stat training">Training</div>
             </div>
             <div class="cert-item">
                 <div class="label">Training</div>
-                CCIE Enterprise Infrastructure &ndash; Sai Nyan Lynn (3&times; CCIE)
+                Cisco HyperFlex (HCI)
+                <div class="cert-stat training">Training</div>
             </div>
             <div class="cert-item">
                 <div class="label">Training</div>
-                CCNP Routing &amp; Switching &ndash; Aung Naing Moe
+                Cisco ACI
+                <div class="cert-stat training">Training</div>
+            </div>
+            <div class="cert-item">
+                <div class="label">Training</div>
+                VMware vCenter / ESXi
+                <div class="cert-stat training">Training</div>
+            </div>
+            <div class="cert-item">
+                <div class="label">Training</div>
+                FortiGate Security
+                <div class="cert-stat training">Training</div>
             </div>
         </div>
     </div>
 
-    <!-- Education -->
+    <!-- Hands-On Equipment -->
     <div class="section">
         <div class="section-header">
-            <span class="icon">○</span>
-            <h2>Education</h2>
+            <span class="icon">▣</span>
+            <h2>Hands-On Equipment</h2>
         </div>
-        <div class="edu-item">
-            <div class="degree">Bachelor of Arts in English</div>
-            <div class="school">Mandalay University, Myanmar</div>
-            <div class="year">2011 &ndash; 2016</div>
+        <div class="equip-text">
+            Cisco ASR9K, NCS 5500/6000, Juniper MX, Nexus 9K/7K/5K/2K, Catalyst 9K, UCS B/C-Series, HyperFlex HX-Series, VMware vCenter, Cisco FMC/FTD/ASA, FortiGate, MikroTik, Zabbix
         </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
         <a href="mailto:ynk.engineer@gmail.com" class="email-link">✉ ynk.engineer@gmail.com</a>
-        <a href="Yan_Naing_Kyaw_CV.pdf" target="_blank">⬇ Download CV (PDF)</a>
+        <a href="Yan_Naing_Kyaw_Senior_Network_Engineer.docx" target="_blank">⬇ Download CV (DOCX)</a>
+        <a href="Yan_Naing_Kyaw_Senior_Network_Engineer.pdf" target="_blank">⬇ Download CV (PDF)</a>
     </div>
 
     <div style="text-align:center; margin-top:20px; font-size:0.75rem; color:var(--text-muted);">
-        Yan Naing Kyaw &nbsp;·&nbsp; portfolio.452217.xyz
+        Yan Naing Kyaw &nbsp;·&nbsp; yannaingkyaw.github.io/portfolio
     </div>
 
 </div>
