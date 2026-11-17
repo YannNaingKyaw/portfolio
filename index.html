@@ -1,483 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yan Naing Kyaw | Senior Network Engineer</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yan Naing Kyaw — Networks that cannot go down</title>
+<meta name="description" content="Senior Network & Solution Engineer. Fourteen years across nationwide ISP core, private cloud, data centre and Smart City platforms — Cisco HyperFlex, ACI, UCS, VMware, MPLS, BGP, FTD/ASA, Zabbix.">
+<meta name="author" content="Yan Naing Kyaw">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Yan Naing Kyaw — Senior Network & Solution Engineer">
+<meta property="og:description" content="Fourteen years of networks that cannot go down: ISP core, private cloud, data centre, Smart City.">
+<meta property="og:image" content="ynk_photo.png">
+<meta property="og:url" content="https://yannnaingkyaw.github.io/portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b0d10'/><text x='50' y='67' font-size='46' font-family='system-ui' font-weight='600' fill='%23f3f1f6' text-anchor='middle'>Y</text></svg>">
+<style>
+  :root{
+    --void:#0b0d10;
+    --void-2:#0f1216;
+    --ink:#f3f1f6;
+    --dim:#9aa4b2;
+    --dimmer:#6b7688;
+    --line:rgba(255,255,255,.10);
+    --line-2:rgba(255,255,255,.06);
+    --steel:#8fb8e8;
+    --navy:#1a2a4a;
+    --glass:rgba(255,255,255,.045);
+    --glass-2:rgba(255,255,255,.028);
+    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--void);color:var(--ink);font-family:var(--sans);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(143,184,232,.28)}
+  .wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 80px}
+  @media (max-width:900px){.wrap{padding:0 24px}}
 
-        :root {
-            --bg: #0b111e;
-            --surface: #1e293b;
-            --border: #334155;
-            --accent: #0f766e;
-            --accent-dim: rgba(15, 118, 110, 0.15);
-            --text: #f1f5f9;
-            --text-dim: #cbd5e1;
-            --text-muted: #94a3b8;
-        }
+  /* ---------- progress ---------- */
+  .prog{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--steel),#fff);z-index:200;transition:width .1s linear}
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+  /* ---------- nav capsule ---------- */
+  .navwrap{position:fixed;top:18px;left:0;right:0;z-index:120;display:flex;justify-content:center;padding:0 20px}
+  .nav{
+    display:flex;align-items:center;gap:6px;padding:7px 8px 7px 16px;border-radius:999px;
+    background:rgba(16,19,24,.72);border:1px solid var(--line);backdrop-filter:blur(18px) saturate(160%);
+    box-shadow:0 18px 50px rgba(0,0,0,.5);
+  }
+  .mono{font-weight:700;font-size:14px;letter-spacing:-.02em;margin-right:10px}
+  .mono i{color:var(--steel);font-style:normal}
+  .nav a.lnk{font-size:13px;color:#a8b2c0;padding:7px 11px;border-radius:999px;transition:.18s}
+  .nav a.lnk:hover{color:#fff;background:rgba(255,255,255,.07)}
+  .nav .pill{
+    display:inline-flex;align-items:center;gap:7px;background:#fff;color:#0b0d10;
+    font-size:13px;font-weight:650;padding:9px 15px;border-radius:999px;margin-left:6px;
+  }
+  .nav .pill span{display:inline-block;width:15px;height:15px;border-radius:50%;background:#0b0d10;color:#fff;font-size:10px;line-height:15px;text-align:center}
+  @media (max-width:860px){.nav a.lnk{display:none}}
 
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image:
-                radial-gradient(circle at 1px 1px, rgba(74, 125, 168, 0.06) 1px, transparent 0);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-        }
+  /* ---------- hero ---------- */
+  header{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:120px 0 60px}
+  .glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+  .g1{width:820px;height:820px;left:50%;top:-280px;transform:translateX(-50%);background:radial-gradient(circle,rgba(42,68,110,.55),transparent 66%)}
+  .g2{width:620px;height:620px;left:-160px;bottom:-220px;background:radial-gradient(circle,rgba(26,42,74,.6),transparent 68%)}
+  .g3{width:560px;height:560px;right:-180px;top:120px;background:radial-gradient(circle,rgba(52,44,70,.45),transparent 70%)}
+  .grid-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.042) 1px,transparent 1px);
+    background-size:34px 34px;
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 34%,#000 25%,transparent 78%);
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 34%,#000 25%,transparent 78%);}
+  .topo{position:absolute;inset:0;z-index:0;opacity:.55;pointer-events:none}
+  .topo svg{width:100%;height:100%}
+  .topo path{stroke:rgba(143,184,232,.45);stroke-width:1.1;fill:none;stroke-dasharray:5 8;animation:dash 30s linear infinite}
+  @keyframes dash{to{stroke-dashoffset:-320}}
+  .topo circle{fill:rgba(143,184,232,.8)}
+  .topo circle.p{animation:pulse 3.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.35;r:3.2}50%{opacity:1;r:5}}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 24px;
-            position: relative;
-            z-index: 1;
-        }
+  .hero-grid{
+    position:relative;z-index:2;display:grid;grid-template-columns:250px minmax(0,1fr) 250px;
+    gap:56px;align-items:center;width:100%;max-width:1340px;margin:0 auto;padding:0 32px;
+  }
+  .rail{display:flex;flex-direction:column;justify-content:center;gap:16px}
+  .hero{text-align:center}
+  .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 26px}
+  .eyebrow b{color:var(--ink);font-weight:600}
+  h1{
+    margin:0 auto;font-size:clamp(44px,7.2vw,116px);line-height:.96;letter-spacing:-.042em;
+    font-weight:520;max-width:11ch;
+  }
+  h1 .thin{color:#a4b0c1;font-weight:460}
+  .hero-lede{margin:28px auto 0;max-width:54ch;color:#c2cad6;font-size:16.5px;line-height:1.65}
+  .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:34px 0 0}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:640;padding:13px 22px;border-radius:999px;transition:.2s}
+  .btn-solid{background:#fff;color:#0b0d10}
+  .btn-solid:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,255,255,.16)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.18);color:var(--ink);background:var(--glass)}
+  .btn-ghost:hover{background:rgba(255,255,255,.09)}
+  .avail{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#9aa4b2;margin-top:24px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--steel);box-shadow:0 0 0 0 rgba(143,184,232,.6);animation:ping 2.6s ease-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(143,184,232,.5)}70%{box-shadow:0 0 0 9px rgba(143,184,232,0)}100%{box-shadow:0 0 0 0 rgba(143,184,232,0)}}
 
-        /* Hero */
-        .hero {
-            text-align: center;
-            padding: 80px 0 60px;
-            position: relative;
-        }
+  .float{
+    width:100%;padding:16px 17px;border-radius:15px;font-size:12.5px;color:#c3ccd8;
+    background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.028));
+    border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);min-height:122px;
+    box-shadow:0 20px 50px rgba(0,0,0,.42);
+  }
+  .float .h{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#a6b2c3;margin-bottom:11px;font-weight:700}
+  .float .h i{width:5px;height:5px;border-radius:50%;background:var(--steel);display:inline-block}
+  .float b{color:#fff;font-weight:600;font-size:13.4px;display:block;margin-bottom:10px;letter-spacing:-.01em}
+  .float .row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid rgba(255,255,255,.08);font-size:12.4px}
+  .float .row span{color:#9dabbd}
+  .float .row span:last-child{color:#d3dae4}
+  @media (max-width:1240px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:44px}.rail{display:none}}
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 20%;
-            right: 20%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
+  /* ---------- marquee ---------- */
+  .marq{border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);overflow:hidden;padding:18px 0;background:rgba(255,255,255,.012)}
+  .marq .track{display:flex;gap:56px;width:max-content;animation:slide 42s linear infinite}
+  .marq span{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#7b8697;white-space:nowrap}
+  @keyframes slide{to{transform:translateX(-50%)}}
 
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #fff;
-            margin-bottom: 8px;
-        }
+  /* ---------- sections ---------- */
+  section{position:relative;padding:120px 0}
+  @media (max-width:900px){section{padding:80px 0}}
+  .kick{display:flex;align-items:center;gap:12px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dimmer);margin:0 0 22px}
+  .kick b{color:var(--steel);font-weight:700}
+  .kick i{flex:1;height:1px;background:var(--line-2);max-width:90px;display:block}
+  h2{margin:0 0 16px;font-size:clamp(30px,4.6vw,58px);line-height:1.02;letter-spacing:-.035em;font-weight:520;max-width:22ch}
+  .sub{color:#98a2b1;max-width:64ch;font-size:16.5px;margin:0 0 52px}
 
-        .hero .title {
-            font-size: 1.15rem;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  .rv.in{opacity:1;transform:none}
 
-        .hero .location {
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
+  /* ---------- counters ---------- */
+  .nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-2)}
+  .num{padding:34px 26px 0;border-right:1px solid var(--line-2)}
+  .num:last-child{border-right:none}
+  .num .v{font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.045em;font-weight:540}
+  .num .v u{text-decoration:none;color:var(--steel)}
+  .num .t{margin-top:12px;color:#8b96a5;font-size:13.5px;line-height:1.45;max-width:24ch}
+  @media (max-width:820px){.nums{grid-template-columns:1fr 1fr}.num{padding:26px 18px 22px}.num:nth-child(2n){border-right:none}.num:nth-child(n+3){border-top:1px solid var(--line-2)}}
 
-        .hero .location span {
-            display: inline-block;
-            margin: 0 8px;
-            color: var(--text-muted);
-        }
+  /* ---------- capability ---------- */
+  .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .cap{
+    position:relative;padding:26px 24px 28px;border-radius:18px;border:1px solid var(--line-2);
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.014));
+    overflow:hidden;transition:.25s;
+  }
+  .cap:hover{border-color:rgba(143,184,232,.34);transform:translateY(-3px)}
+  .cap::after{content:"";position:absolute;inset:0;border-radius:18px;background:radial-gradient(120% 90% at 50% -20%,rgba(143,184,232,.16),transparent 60%);opacity:0;transition:.3s}
+  .cap:hover::after{opacity:1}
+  .cap .ix{font-size:11px;color:var(--dimmer);letter-spacing:.14em;margin-bottom:16px}
+  .cap h3{margin:0 0 9px;font-size:18px;letter-spacing:-.02em;font-weight:600;position:relative;z-index:1}
+  .cap p{margin:0;font-size:13.8px;color:#98a2b1;line-height:1.6;position:relative;z-index:1}
+  .cap .meter{margin-top:18px;height:2px;background:rgba(255,255,255,.09);border-radius:2px;overflow:hidden}
+  .cap .meter i{display:block;height:100%;background:linear-gradient(90deg,var(--steel),rgba(143,184,232,.35));width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+  .cap.in .meter i{width:var(--w)}
+  @media (max-width:980px){.caps{grid-template-columns:1fr 1fr}}
+  @media (max-width:640px){.caps{grid-template-columns:1fr}}
 
-        .hero .nodes {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 24px;
-        }
+  /* ---------- experience ---------- */
+  .job{display:grid;grid-template-columns:200px 1fr;gap:44px;padding:44px 0;border-top:1px solid var(--line-2)}
+  .job:first-of-type{border-top:none;padding-top:0}
+  .job .when{font-size:12.5px;color:var(--dimmer);letter-spacing:.06em;text-transform:uppercase;position:sticky;top:110px;align-self:start}
+  .job .when b{display:block;color:var(--ink);font-size:13.5px;letter-spacing:.02em;margin-bottom:6px;text-transform:none}
+  .job h3{margin:0 0 4px;font-size:26px;letter-spacing:-.028em;font-weight:540}
+  .job .co{color:var(--steel);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;font-weight:600}
+  .job ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;max-width:70ch}
+  .job li{position:relative;padding-left:20px;font-size:15.2px;color:#c2cad6;line-height:1.62}
+  .job li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:1px;background:var(--steel);opacity:.7}
+  @media (max-width:820px){.job{grid-template-columns:1fr;gap:16px;padding:32px 0}.job .when{position:static}}
 
-        .hero .nodes .dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            opacity: 0.3;
-            animation: pulse 3s ease-in-out infinite;
-        }
+  /* ---------- work ---------- */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .wc{
+    position:relative;border-radius:20px;padding:30px 28px 26px;border:1px solid var(--line-2);
+    background:
+      radial-gradient(120% 100% at 0% 0%,rgba(42,68,110,.45),transparent 62%),
+      linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));
+    display:flex;flex-direction:column;min-height:290px;overflow:hidden;transition:.3s;
+  }
+  .wc:hover{transform:translateY(-4px);border-color:rgba(143,184,232,.3)}
+  .wc .tag{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#93a2b6;margin:0 0 16px;font-weight:650}
+  .wc h3{margin:0 0 12px;font-size:22px;line-height:1.2;letter-spacing:-.025em;font-weight:540;max-width:22ch}
+  .wc p{margin:0 0 22px;font-size:14px;color:#a9b3c1;line-height:1.62}
+  .wc .figs{display:flex;gap:26px;flex-wrap:wrap;margin-top:auto;padding-top:18px;border-top:1px solid var(--line-2)}
+  .wc .figs div{font-size:11px;letter-spacing:.06em;color:#8996a7;text-transform:uppercase}
+  .wc .figs b{display:block;font-size:19px;color:#fff;letter-spacing:-.02em;font-weight:600;text-transform:none;margin-bottom:3px}
+  @media (max-width:820px){.work{grid-template-columns:1fr}}
 
-        .hero .nodes .dot:nth-child(2) { animation-delay: 0.5s; }
-        .hero .nodes .dot:nth-child(3) { animation-delay: 1s; }
-        .hero .nodes .dot:nth-child(4) { animation-delay: 1.5s; }
-        .hero .nodes .dot:nth-child(5) { animation-delay: 2s; }
+  /* ---------- method ---------- */
+  .meth{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line-2)}
+  .m{padding:30px 26px 30px 0;border-bottom:1px solid var(--line-2)}
+  .m .n{font-size:11px;color:var(--dimmer);letter-spacing:.16em;margin-bottom:14px}
+  .m h3{margin:0 0 8px;font-size:16.5px;letter-spacing:-.015em;font-weight:600}
+  .m p{margin:0;font-size:13.6px;color:#98a2b1;line-height:1.6;max-width:34ch}
+  .m:nth-child(3n+2){padding-left:26px;border-left:1px solid var(--line-2)}
+  .m:nth-child(3n){padding-left:26px;border-left:1px solid var(--line-2)}
+  @media (max-width:900px){.meth{grid-template-columns:1fr 1fr}.m,.m:nth-child(3n+2),.m:nth-child(3n){padding:24px 18px;border-left:none}.m:nth-child(2n){border-left:1px solid var(--line-2)}}
+  @media (max-width:600px){.meth{grid-template-columns:1fr}.m:nth-child(2n){border-left:none}}
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.5); }
-        }
+  /* ---------- toolkit ---------- */
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+  .tool{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--line-2);align-items:baseline}
+  .tool b{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);font-weight:650}
+  .tool span{font-size:14.5px;color:#c2cad6;line-height:1.55}
+  @media (max-width:860px){.tools{grid-template-columns:1fr}.tool{grid-template-columns:1fr;gap:4px}}
 
-        /* Section */
-        .section {
-            margin: 48px 0;
-        }
+  /* ---------- creds ---------- */
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cred{padding:24px;border-radius:16px;border:1px solid var(--line-2);background:var(--glass-2)}
+  .cred .t{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);font-weight:700;margin-bottom:10px}
+  .cred h3{margin:0 0 5px;font-size:17px;letter-spacing:-.02em;font-weight:600}
+  .cred p{margin:0;font-size:13.4px;color:#98a2b1}
+  @media (max-width:760px){.creds{grid-template-columns:1fr}}
+  .devices{margin-top:14px;padding:24px;border-radius:16px;border:1px solid var(--line-2);background:var(--glass-2);font-size:14px;color:#c2cad6;line-height:1.9}
+  .devices b{color:#fff;font-weight:600}
 
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
-        }
+  /* ---------- contact ---------- */
+  footer{position:relative;padding:130px 0 60px;overflow:hidden;border-top:1px solid var(--line-2)}
+  footer .g4{width:900px;height:900px;left:50%;bottom:-620px;transform:translateX(-50%);background:radial-gradient(circle,rgba(42,68,110,.6),transparent 66%)}
+  .contact{position:relative;z-index:2;text-align:center}
+  footer h2{margin:0 auto 18px;max-width:24ch}
+  .cmail{display:inline-block;font-size:clamp(18px,2.6vw,30px);letter-spacing:-.03em;font-weight:540;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px;margin:26px 0 22px;transition:.2s}
+  .cmail:hover{border-color:#fff;color:#fff}
+  .cmeta{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;color:#8b96a5;font-size:13.5px;margin-bottom:34px}
+  .cmeta span b{color:#e6e9ee;font-weight:600}
+  .avatar-row{display:inline-flex;align-items:center;gap:12px;margin:34px 0 6px;font-size:13.5px;color:#9aa4b2}
+  .avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.22)}
+  .foot{margin-top:80px;padding-top:22px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#6f7a8b}
 
-        .section-header .icon {
-            font-size: 1.1rem;
-            color: var(--accent);
-        }
-
-        .section-header h2 {
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--text-dim);
-        }
-
-        /* Experience cards */
-        .exp-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 28px;
-            margin-bottom: 20px;
-            transition: border-color 0.2s;
-        }
-
-        .exp-card:hover {
-            border-color: rgba(74, 125, 168, 0.3);
-        }
-
-        .exp-card .role {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 2px;
-        }
-
-        .exp-card .company {
-            font-size: 0.95rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .exp-card .period {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-top: 2px;
-            margin-bottom: 14px;
-        }
-
-        .exp-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .exp-card ul li {
-            position: relative;
-            padding-left: 18px;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            line-height: 1.7;
-        }
-
-        .exp-card ul li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            opacity: 0.4;
-            border-radius: 50%;
-        }
-
-        /* Summary */
-        .summary {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 24px 28px;
-            font-size: 0.92rem;
-            color: var(--text-dim);
-            line-height: 1.8;
-        }
-
-        /* Skills block */
-        .skills-block {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 20px 24px;
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            line-height: 1.9;
-        }
-
-        .skills-block strong {
-            color: var(--accent);
-        }
-
-        /* Certs */
-        .certs-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .cert-item {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px 20px;
-            font-size: 0.88rem;
-            color: var(--text);
-        }
-
-        .cert-item .label {
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 4px;
-        }
-
-        .cert-item .cert-stat {
-            display: inline-block;
-            font-size: 0.7rem;
-            padding: 1px 8px;
-            border-radius: 3px;
-            margin-top: 4px;
-        }
-        .cert-item .cert-stat.certified {
-            background: rgba(74, 125, 168, 0.15);
-            color: var(--accent);
-        }
-        .cert-item .cert-stat.training {
-            background: rgba(100, 100, 120, 0.15);
-            color: #8a9bb5;
-        }
-
-        /* Equipment */
-        .equip-block {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 20px 24px;
-            font-size: 0.88rem;
-            color: var(--text-dim);
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .footer a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.85rem;
-            padding: 10px 20px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer a:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-dim);
-        }
-
-        .footer .email-link {
-            border: none;
-            color: var(--accent);
-        }
-
-        .footer .email-link:hover {
-            background: transparent;
-        }
-
-        @media (max-width: 600px) {
-            .container { padding: 30px 16px; }
-            .hero { padding: 40px 0 36px; }
-            .hero h1 { font-size: 2rem; }
-            .exp-card { padding: 20px; }
-            .certs-grid { grid-template-columns: 1fr; }
-            .footer { flex-direction: column; }
-        }
-    </style>
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+  }
+</style>
 </head>
 <body>
 
-<div class="container">
+<div class="prog" id="prog"></div>
 
-    <!-- Hero -->
-    <div class="hero">
-        <h1>Yan Naing Kyaw</h1>
-        <div class="title">Senior Network &amp; Solution Engineer</div>
-        <div class="location">Bangkok, Thailand <span>·</span> +66 06-3327-5176 <span>·</span> Line: ynk139</div>
-        <div class="nodes">
-            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        </div>
-    </div>
-
-    <!-- Summary -->
-    <div class="section">
-        <div class="section-header"><span class="icon">■</span><h2>Profile</h2></div>
-        <div class="summary">
-            Senior Network, Cloud &amp; Infrastructure Engineer with 10+ years of experience across ISP, system integrator, private cloud, and Smart City environments. Expert in Cisco HyperFlex (HCI), VMware vCenter, Cisco UCS, Cisco ACI, and MicroCloud implementation. Proven success designing, deploying, and operating large-scale, high-availability networks and Smart City platforms integrating video surveillance, IoT, and AI analytics.
-        </div>
-    </div>
-
-    <!-- Skills -->
-    <div class="section">
-        <div class="section-header"><span class="icon">◆</span><h2>Core Skills &amp; Technologies</h2></div>
-        <div class="skills-block">
-            <strong>Networking:</strong> BGP, OSPF, IS-IS, MPLS, MP-BGP, SD-WAN, VPN, VLAN, L2/L3 design<br>
-            <strong>Cloud &amp; Virtualization:</strong> Cisco HyperFlex (HCI), Cisco UCS, VMware vCenter/ESXi, Private Cloud, MicroCloud<br>
-            <strong>Data Center &amp; Automation:</strong> Cisco ACI, UCS Manager, Firewall-as-a-Service (FWaaS)<br>
-            <strong>Security:</strong> Cisco FTD/ASA/FMC, FortiGate<br>
-            <strong>Smart City &amp; IoT:</strong> AI VMS (Eocortex, Scylla AI), IoT connectivity, GPU infrastructure<br>
-            <strong>Monitoring:</strong> Zabbix, SNMP, Cacti<br>
-            <strong>Voice &amp; PBX:</strong> Cloud PBX, VoIP, SIP Trunking
-        </div>
-    </div>
-
-    <!-- Experience -->
-    <div class="section">
-        <div class="section-header"><span class="icon">●</span><h2>Experience</h2></div>
-
-        <div class="exp-card">
-            <div class="role">Technical Consultant Lead</div>
-            <div class="company">INNOFLEX SOLUTIONS</div>
-            <div class="period">2026 – Present &nbsp;·&nbsp; Bangkok, Thailand</div>
-            <ul>
-                <li>Lead technical consultant for enterprise datacenter modernization engagements (HCI, Software-Defined Storage, and Orchestration).</li>
-                <li>Architected identity and security governance frameworks (IAM, PAM, XDR) for major enterprise and academic institutions.</li>
-                <li>Authored technical specifications, proposal frameworks, and compliance documentation for large-scale procurement.</li>
-                <li>Engineered workload migration strategies and infrastructure hardening plans.</li>
-                <li>Delivered high-availability network security projects including firewall upgrades, VPN deployments, and remediation services.</li>
-                <li>Built competitive pricing models and BOM workbooks with market-verified hardware/software cost analysis.</li>
-            </ul>
-        </div>
-
-        <div class="exp-card">
-            <div class="role">Network &amp; Solution Engineer</div>
-            <div class="company">PLANETCOMM / PLANETCLOUD</div>
-            <div class="period">June 2024 – Present &nbsp;·&nbsp; Bangkok, Thailand</div>
-            <ul>
-                <li>Designed and operated Cisco HyperFlex HCI and UCS-based private cloud environments</li>
-                <li>Managed virtualization infrastructure using VMware vCenter and automated provisioning workflows</li>
-                <li>Implemented MicroCloud environments for rapid POC and edge deployments</li>
-                <li>Engineered multi-tenant network architecture (VLANs, VPNs, firewalls, routing) ensuring isolation and scalability</li>
-                <li>Applied Cisco ACI for policy-driven data center networking</li>
-                <li>Delivered Smart City network solutions integrating video surveillance, IoT, and central management</li>
-                <li>Designed and implemented SPDC Data Center and FWaaS solutions</li>
-                <li>Collaborated with cross-vendor teams for integrated cloud and Smart City deployments</li>
-            </ul>
-        </div>
-
-        <div class="exp-card">
-            <div class="role">Senior Core Network Engineer</div>
-            <div class="company">GLOBAL TECHNOLOGY CO., LTD.</div>
-            <div class="period">December 2011 – June 2024 &nbsp;·&nbsp; Myanmar</div>
-            <ul>
-                <li>Operated and maintained nationwide ISP core network infrastructure supporting millions of users</li>
-                <li>Designed and implemented IP Transit, MPLS VPN, FTTH, DIA, and WAN services</li>
-                <li>Led L2/L3 escalation response for critical nationwide network outages</li>
-                <li>Built International Gateway (IGW) networks with eBGP/iBGP peering and global CDNs (Google, Facebook, Netflix)</li>
-                <li>Designed and deployed MPLS core network using IS-IS, MP-BGP, TE, and QoS</li>
-                <li>Conducted capacity planning and 160G–400G backbone upgrades</li>
-                <li>Expanded POP sites and multi-service platforms for high availability and redundancy</li>
-            </ul>
-        </div>
-
-        <div class="exp-card">
-            <div class="role">Smart City &amp; AI Platform Projects</div>
-            <div class="period">Various Projects</div>
-            <ul>
-                <li>Designed Smart City network infrastructure for urban surveillance and IoT integration</li>
-                <li>Deployed AI VMS (Eocortex, Scylla AI) with facial recognition, object detection, and behavior analytics</li>
-                <li>Architected GPU-enabled edge and data center environments for real-time AI inference</li>
-                <li>Built secure, high-availability connectivity between edge devices, data centers, and private clouds</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Certifications -->
-    <div class="section">
-        <div class="section-header"><span class="icon">◇</span><h2>Certifications &amp; Training</h2></div>
-        <div class="certs-grid">
-            <div class="cert-item">
-                <div class="label">Cisco Certified</div>
-                Cisco Certified Specialist – ENARSI
-                <div class="cert-stat certified">✓ Certified</div>
-            </div>
-            <div class="cert-item">
-                <div class="label">Training</div>
-                CCIE Service Provider – BIM
-                <div class="cert-stat training">Training</div>
-            </div>
-            <div class="cert-item">
-                <div class="label">Training</div>
-                CCIE Enterprise Infrastructure – Sai Nyan Lynn (3× CCIE)
-                <div class="cert-stat training">Training</div>
-            </div>
-            <div class="cert-item">
-                <div class="label">Training</div>
-                CCNP Routing &amp; Switching – Aung Naing Moe
-                <div class="cert-stat training">Training</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hands-On -->
-    <div class="section">
-        <div class="section-header"><span class="icon">▣</span><h2>Hands-On Devices</h2></div>
-        <div class="equip-block">
-            Cisco ASR 9010/9006/7710/1001/903/920 | Cisco NCS 540/520 | Cisco ISR 4321 | Cisco Catalyst 3650/4508/6504/C8300 | Cisco Nexus 3524 | Cisco ASA/FTD/FMC | FortiGate 30E/60E | Huawei NetEngine 8000 | SIP &amp; Voice Platforms
-        </div>
-    </div>
-
-    <!-- Education -->
-    <div class="section">
-        <div class="section-header"><span class="icon">○</span><h2>Education</h2></div>
-        <div class="equip-block">
-            <strong>Bachelor of Arts in English</strong> — Mandalaya University, Myanmar (2011–2016)
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <a href="mailto:ynk.engineer@gmail.com" class="email-link">✉ ynk.engineer@gmail.com</a>
-        <a href="Yan_Naing_Kyaw_Senior_Network_Engineer.docx" target="_blank">⬇ Download CV (DOCX)</a>
-        <a href="Yan_Naing_Kyaw_Senior_Network_Engineer.pdf" target="_blank">⬇ Download CV (PDF)</a>
-    </div>
-
-    <div style="text-align:center; margin-top:20px; font-size:0.75rem; color:var(--text-muted);">
-        Yan Naing Kyaw &nbsp;·&nbsp; yannaingkyaw.github.io/portfolio
-    </div>
-
+<div class="navwrap">
+  <nav class="nav">
+    <div class="mono">ynk<i>.</i></div>
+    <a class="lnk" href="#numbers">Numbers</a>
+    <a class="lnk" href="#capability">Capability</a>
+    <a class="lnk" href="#experience">Experience</a>
+    <a class="lnk" href="#work">Work</a>
+    <a class="lnk" href="#method">Operations</a>
+    <a class="pill" href="#contact">Let's talk <span>→</span></a>
+  </nav>
 </div>
+
+<header>
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+  <div class="glow g3"></div>
+  <div class="grid-bg"></div>
+
+  <div class="topo" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <path d="M-40,700 C180,640 300,730 470,660 S700,560 880,620 1120,700 1480,600"/>
+      <path d="M-40,230 C200,150 340,260 520,190 S780,110 960,200 1200,270 1480,180"/>
+      <circle class="p" cx="120" cy="672" r="3.4"/>
+      <circle class="p" cx="470" cy="660" r="3.4" style="animation-delay:.7s"/>
+      <circle class="p" cx="880" cy="620" r="3.4" style="animation-delay:1.3s"/>
+      <circle class="p" cx="1290" cy="640" r="3.4" style="animation-delay:1.9s"/>
+      <circle class="p" cx="520" cy="190" r="3.4" style="animation-delay:1s"/>
+      <circle class="p" cx="960" cy="200" r="3.4" style="animation-delay:1.6s"/>
+    </svg>
+  </div>
+
+  <div class="hero-grid">
+    <div class="rail">
+      <div class="float rv">
+        <div class="h"><i></i> ISP core</div>
+        <b>IS-IS · MP-BGP · MPLS TE</b>
+        <div class="row"><span>Backbone</span><span>160G → 400G</span></div>
+        <div class="row"><span>Escalation</span><span>L2 / L3 owner</span></div>
+      </div>
+      <div class="float rv">
+        <div class="h"><i></i> Private cloud</div>
+        <b>HyperFlex · UCS · vCenter</b>
+        <div class="row"><span>Storage</span><span>HCI · SDS</span></div>
+        <div class="row"><span>Fabric</span><span>ACI</span></div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <p class="eyebrow">Bangkok, Thailand &nbsp;·&nbsp; <b>Senior Network &amp; Solution Engineer</b></p>
+      <h1>Networks that <span class="thin">cannot</span> go down.</h1>
+      <p class="hero-lede">Fourteen years across nationwide ISP core, private cloud, data centre and Smart City platforms — the routing, the hypervisor, the firewall and the video plane. I design them, deploy them, and stay for the operating years after.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="#work">See selected work &nbsp;→</a>
+        <a class="btn btn-ghost" href="Yan_Naing_Kyaw_Senior_Network_Engineer.pdf" download>Download CV</a>
+      </div>
+      <div class="avail"><span class="dot"></span> Open to data centre modernisation, cloud and network consulting</div>
+    </div>
+
+    <div class="rail">
+      <div class="float rv">
+        <div class="h"><i></i> Smart City</div>
+        <b>AI VMS · GPU edge</b>
+        <div class="row"><span>Video</span><span>Eocortex · Scylla</span></div>
+        <div class="row"><span>IoT</span><span>segmented</span></div>
+      </div>
+      <div class="float rv">
+        <div class="h"><i></i> Security &amp; ops</div>
+        <b>FTD · ASA · FortiGate</b>
+        <div class="row"><span>Monitoring</span><span>Zabbix · SNMP</span></div>
+        <div class="row"><span>Governance</span><span>IAM · PAM · XDR</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marq" aria-hidden="true">
+  <div class="track">
+    <span>Cisco ASR 9000</span><span>NCS 540</span><span>Catalyst 8300</span><span>Nexus 3524</span><span>HyperFlex HCI</span><span>UCS Manager</span><span>ACI</span><span>VMware vCenter</span><span>FortiGate</span><span>FTD · FMC</span><span>Huawei NetEngine 8000</span><span>Zabbix</span><span>MPLS · IS-IS · MP-BGP</span>
+    <span>Cisco ASR 9000</span><span>NCS 540</span><span>Catalyst 8300</span><span>Nexus 3524</span><span>HyperFlex HCI</span><span>UCS Manager</span><span>ACI</span><span>VMware vCenter</span><span>FortiGate</span><span>FTD · FMC</span><span>Huawei NetEngine 8000</span><span>Zabbix</span><span>MPLS · IS-IS · MP-BGP</span>
+  </div>
+</div>
+
+<section id="numbers">
+  <div class="wrap">
+    <p class="kick rv"><b>01</b> Numbers<i></i></p>
+    <h2 class="rv">The short version, in four lines.</h2>
+    <div class="nums" style="margin-top:44px">
+      <div class="num rv"><div class="v"><span class="count" data-to="14">0</span> <u>yrs</u></div><div class="t">ISP core, data centre and private cloud, from 2011</div></div>
+      <div class="num rv"><div class="v"><span class="count" data-to="400">0</span><u>G</u></div><div class="t">Backbone capacity planned and upgraded, up from 160G</div></div>
+      <div class="num rv"><div class="v">Millions</div><div class="t">Subscribers on networks I operated and defended</div></div>
+      <div class="num rv"><div class="v">ENARSI</div><div class="t">Cisco certified · CCIE Service Provider &amp; EI trained</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="capability">
+  <div class="wrap">
+    <p class="kick rv"><b>02</b> Capability<i></i></p>
+    <h2 class="rv">Six disciplines, one engineer across the whole stack.</h2>
+    <p class="sub rv">From the fibre and the BGP session up through the hypervisor, the firewall and the video platform — and on into the specification and the costing that fund it.</p>
+    <div class="caps">
+      <div class="cap rv" style="--w:96%"><div class="ix">01</div><h3>ISP core &amp; routing</h3><p>BGP, OSPF, IS-IS, MPLS, MP-BGP, TE, QoS. IP Transit, VPN, FTTH, DIA and IGW peering with global CDNs.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:92%"><div class="ix">02</div><h3>Cloud &amp; virtualisation</h3><p>Cisco HyperFlex HCI, UCS, VMware vCenter/ESXi, private cloud and MicroCloud, including KVM and software-defined storage.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:88%"><div class="ix">03</div><h3>Data centre &amp; automation</h3><p>Cisco ACI policy-driven networking, UCS Manager, FWaaS, SD-WAN, workload migration and infrastructure hardening.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:86%"><div class="ix">04</div><h3>Security</h3><p>Cisco FTD/ASA/FMC and FortiGate, plus IAM, PAM and XDR governance frameworks for enterprise and academia.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:82%"><div class="ix">05</div><h3>Smart City &amp; AI video</h3><p>AI VMS (Eocortex, Scylla AI), facial recognition, object detection and GPU-enabled edge and data-centre inference.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:78%"><div class="ix">06</div><h3>Monitoring &amp; pre-sales</h3><p>Zabbix, SNMP, Cacti — plus specifications, TOR responses, BOM workbooks and cost models that survive a bid.</p><div class="meter"><i></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="kick rv"><b>03</b> Experience<i></i></p>
+    <h2 class="rv">Where the years went.</h2>
+    <p class="sub rv">Eleven of them keeping a national ISP core alive. The rest building the private clouds and platforms that sit on top of it.</p>
+
+    <div class="job rv">
+      <div class="when"><b>2026 — Present</b>Bangkok, Thailand</div>
+      <div>
+        <h3>Technical Consultant Lead</h3>
+        <p class="co">Innoflex Solutions</p>
+        <ul>
+          <li>Lead technical consultant for enterprise datacenter modernization engagements (HCI, Software-Defined Storage, and Orchestration).</li>
+          <li>Architected identity and security governance frameworks (IAM, PAM, XDR) for major enterprise and academic institutions.</li>
+          <li>Authored technical specifications, proposal frameworks, and compliance documentation for large-scale procurement.</li>
+          <li>Engineered workload migration strategies and infrastructure hardening plans.</li>
+          <li>Delivered high-availability network security projects including firewall upgrades, VPN deployments, and remediation services.</li>
+          <li>Built competitive pricing models and BOM workbooks with market-verified hardware/software cost analysis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job rv">
+      <div class="when"><b>June 2024 — Present</b>Bangkok, Thailand</div>
+      <div>
+        <h3>Network &amp; Solution Engineer</h3>
+        <p class="co">Planetcomm / Planetcloud</p>
+        <ul>
+          <li>Designed and operated Cisco HyperFlex HCI and UCS-based private cloud environments</li>
+          <li>Managed virtualization infrastructure using VMware vCenter and automated provisioning workflows</li>
+          <li>Implemented MicroCloud environments for rapid POC and edge deployments</li>
+          <li>Engineered multi-tenant network architecture (VLANs, VPNs, firewalls, routing) ensuring isolation and scalability</li>
+          <li>Applied Cisco ACI for policy-driven data center networking</li>
+          <li>Delivered Smart City network solutions integrating video surveillance, IoT, and central management</li>
+          <li>Designed and implemented SPDC Data Center and FWaaS solutions</li>
+          <li>Collaborated with cross-vendor teams for integrated cloud and Smart City deployments</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job rv">
+      <div class="when"><b>December 2011 — June 2024</b>Myanmar</div>
+      <div>
+        <h3>Senior Core Network Engineer</h3>
+        <p class="co">Global Technology Co., Ltd.</p>
+        <ul>
+          <li>Operated and maintained nationwide ISP core network infrastructure supporting millions of users</li>
+          <li>Designed and implemented IP Transit, MPLS VPN, FTTH, DIA, and WAN services</li>
+          <li>Led L2/L3 escalation response for critical nationwide network outages</li>
+          <li>Built International Gateway (IGW) networks with eBGP/iBGP peering and global CDNs (Google, Facebook, Netflix)</li>
+          <li>Designed and deployed MPLS core network using IS-IS, MP-BGP, TE, and QoS</li>
+          <li>Conducted capacity planning and 160G–400G backbone upgrades</li>
+          <li>Expanded POP sites and multi-service platforms for high availability and redundancy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <p class="kick rv"><b>04</b> Selected work<i></i></p>
+    <h2 class="rv">Four engagements, and what they had to survive.</h2>
+    <p class="sub rv">Customer names withheld where the work sits under NDA. The figures are the ones that decided the design.</p>
+    <div class="work">
+      <div class="wc rv">
+        <p class="tag">Private cloud · Enterprise</p>
+        <h3>Data centre replacement on Cisco HyperFlex and UCS</h3>
+        <p>A nodal design replacing an end-of-life server estate, with software-defined storage and orchestration so capacity grows a node at a time instead of a rack at a time.</p>
+        <div class="figs"><div><b>41</b>VMs consolidated</div><div><b>133</b>vCPU · 503 GB</div><div><b>13.6 TB</b>usable</div></div>
+      </div>
+      <div class="wc rv">
+        <p class="tag">Backup &amp; retention</p>
+        <h3>Repository with immutability enforced on write</h3>
+        <p>RAID-6 repository sized for a defined retention window, with immutability enforced at the storage layer so an operator mistake cannot delete the recovery copy.</p>
+        <div class="figs"><div><b>108 TB</b>raw</div><div><b>90 / 30 d</b>tiers</div><div><b>Immutable</b>WORM</div></div>
+      </div>
+      <div class="wc rv">
+        <p class="tag">Smart City · Surveillance &amp; AI</p>
+        <h3>Video platform carrying AI inference at the edge</h3>
+        <p>Network and GPU design for urban surveillance — every camera, sensor and inference node reachable, segmented and centrally managed, with the video plane never touching the office plane.</p>
+        <div class="figs"><div><b>AI VMS</b>Eocortex · Scylla</div><div><b>Edge + DC</b>GPU inference</div><div><b>Segmented</b>IoT &amp; video</div></div>
+      </div>
+      <div class="wc rv">
+        <p class="tag">ISP core · National scale</p>
+        <h3>MPLS core and international gateway build-out</h3>
+        <p>IS-IS and MP-BGP design with traffic engineering and QoS, peering with the CDNs that carry most of the traffic, and escalation ownership when the whole country notices an outage.</p>
+        <div class="figs"><div><b>160G → 400G</b>backbone</div><div><b>IGW</b>eBGP / iBGP</div><div><b>Millions</b>subscribers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <p class="kick rv"><b>05</b> Operations<i></i></p>
+    <h2 class="rv">The work after the deployment.</h2>
+    <p class="sub rv">Most infrastructure fails in month nine, not on cutover day. These are the habits that keep it alive.</p>
+    <div class="meth">
+      <div class="m rv"><div class="n">01</div><h3>Change windows with a written rollback</h3><p>Every change carries its own undo step and a tested way back. If the rollback is not written down, the change is not ready.</p></div>
+      <div class="m rv"><div class="n">02</div><h3>Evidence, not opinions</h3><p>Preventive maintenance ends with captured output — device health, service state, capacity headroom — filed so the next round compares against something real.</p></div>
+      <div class="m rv"><div class="n">03</div><h3>Read-only by default</h3><p>During audits and PM rounds I observe and record. Nothing gets changed to make a dashboard look better than the network is.</p></div>
+      <div class="m rv"><div class="n">04</div><h3>Specifications that survive procurement</h3><p>Technical specs, TOR responses and BOMs checked line by line against the source quote, so what is bought is what was designed.</p></div>
+      <div class="m rv"><div class="n">05</div><h3>Monitoring before handover</h3><p>Zabbix, SNMP and flow data in place before the customer takes the keys, so the first alarm is not the first warning.</p></div>
+      <div class="m rv"><div class="n">06</div><h3>One conversation with the customer</h3><p>Plain language in the report, technical depth in the appendix. Whoever signs the cheque should not need a translator.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="toolkit">
+  <div class="wrap">
+    <p class="kick rv"><b>06</b> Toolkit<i></i></p>
+    <h2 class="rv">What I work with.</h2>
+    <div class="tools" style="margin-top:52px">
+      <div class="tool rv"><b>Networking</b><span>BGP, OSPF, IS-IS, MPLS, MP-BGP, SD-WAN, VPN, VLAN, L2/L3 design</span></div>
+      <div class="tool rv"><b>Cloud</b><span>Cisco HyperFlex (HCI), Cisco UCS, VMware vCenter/ESXi, Private Cloud, MicroCloud</span></div>
+      <div class="tool rv"><b>Data centre</b><span>Cisco ACI, UCS Manager, Firewall-as-a-Service (FWaaS)</span></div>
+      <div class="tool rv"><b>Security</b><span>Cisco FTD/ASA/FMC, FortiGate</span></div>
+      <div class="tool rv"><b>Smart City &amp; IoT</b><span>AI VMS (Eocortex, Scylla AI), IoT connectivity, GPU infrastructure</span></div>
+      <div class="tool rv"><b>Monitoring</b><span>Zabbix, SNMP, Cacti</span></div>
+      <div class="tool rv"><b>Voice &amp; PBX</b><span>Cloud PBX, VoIP, SIP Trunking</span></div>
+      <div class="tool rv"><b>Languages</b><span>English, Burmese</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <p class="kick rv"><b>07</b> Credentials<i></i></p>
+    <h2 class="rv">Certified, trained, and hands on the hardware.</h2>
+    <div class="creds" style="margin-top:44px">
+      <div class="cred rv"><div class="t">Certified</div><h3>Cisco Certified Specialist — ENARSI</h3><p>Enterprise Advanced Routing &amp; Services</p></div>
+      <div class="cred rv"><div class="t">Training</div><h3>CCIE Service Provider</h3><p>BIM</p></div>
+      <div class="cred rv"><div class="t">Training</div><h3>CCIE Enterprise Infrastructure</h3><p>Sai Nyan Lynn (3× CCIE)</p></div>
+      <div class="cred rv"><div class="t">Training</div><h3>CCNP Routing &amp; Switching</h3><p>Aung Naing Moe</p></div>
+    </div>
+    <div class="devices rv">
+      <b>Hands-on:</b> Cisco ASR 9010 / 9006 / 7710 / 1001 / 903 / 920 · NCS 540 / 520 · ISR 4321 · Catalyst 3650 / 4508 / 6504 / C8300 · Nexus 3524 · ASA / FTD / FMC · FortiGate 30E / 60E · Huawei NetEngine 8000 · SIP &amp; voice platforms<br>
+      <b>Education:</b> Bachelor of Arts in English — University of Mandalay, Myanmar (2011–2016)
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="glow g4"></div>
+  <div class="wrap contact">
+    <p class="kick rv" style="justify-content:center"><b>08</b> Contact</p>
+    <h2 class="rv">Let's talk about the network you cannot afford to lose.</h2>
+    <p class="sub rv" style="margin:0 auto 8px;text-align:center">Datacentre modernisation, private cloud, ISP and enterprise routing, Smart City and video platforms — or the specification and costing work in front of the bid.</p>
+    <div class="rv avatar-row"><img class="avatar" src="ynk_photo.png" alt="Yan Naing Kyaw"><span>Yan Naing Kyaw · Technical Consultant Lead, Bangkok</span></div>
+    <a class="cmail rv" href="mailto:ynk.engineer@gmail.com">ynk.engineer@gmail.com</a>
+    <div class="cmeta rv">
+      <span>Phone <b>+66 06-3327-5176</b></span>
+      <span>Line <b>ynk139</b></span>
+      <span>Based in <b>Bangkok, Thailand</b></span>
+    </div>
+    <div class="hero-ctas rv">
+      <a class="btn btn-solid" href="Yan_Naing_Kyaw_Senior_Network_Engineer.pdf" download>Download CV (PDF)</a>
+      <a class="btn btn-ghost" href="Yan_Naing_Kyaw_Senior_Network_Engineer.docx" download>Download CV (DOCX)</a>
+    </div>
+    <div class="foot">
+      <div>© <span id="yr">2026</span> Yan Naing Kyaw · Senior Network &amp; Solution Engineer</div>
+      <div>yannaingkyaw.github.io/portfolio</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // scroll progress
+  const prog = document.getElementById('prog');
+  addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    prog.style.width = (scrollY / (h || 1) * 100) + '%';
+  }, {passive:true});
+
+  // reveal on scroll
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = Math.min(i * 70, 280) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.16, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // count up
+  const seen = new WeakSet();
+  const cio = new IntersectionObserver((es) => {
+    es.forEach(e => {
+      if (!e.isIntersecting || seen.has(e.target)) return;
+      seen.add(e.target);
+      const el = e.target, to = +el.dataset.to, t0 = performance.now(), dur = 1300;
+      const step = (t) => {
+        const p = Math.min((t - t0) / dur, 1);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }, {threshold:.5});
+  document.querySelectorAll('.count').forEach(el => cio.observe(el));
+</script>
 </body>
 </html>
