@@ -4,6 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yan Naing Kyaw — Networks that cannot go down</title>
+  <meta name="description" content="Yan Naing Kyaw — Senior Network, Cloud and Infrastructure Engineer with 15 years across ISP core, data centres, private cloud and Smart City platforms. Selected work, resilience practice and CV.">
+  <link rel="canonical" href="https://yannnaingkyaw.github.io/portfolio/">
+  <meta name="theme-color" content="#0c0b0c">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Yan Naing Kyaw">
+  <meta property="og:title" content="Yan Naing Kyaw — Networks that cannot go down.">
+  <meta property="og:description" content="15 years of ISP core, data centre and private cloud infrastructure. Selected work, resilience practice and CV.">
+  <meta property="og:url" content="https://yannnaingkyaw.github.io/portfolio/">
+  <meta property="og:image" content="https://yannnaingkyaw.github.io/portfolio/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yan Naing Kyaw — Networks that cannot go down.">
+  <meta name="twitter:description" content="15 years of ISP core, data centre and private cloud infrastructure.">
+  <meta name="twitter:image" content="https://yannnaingkyaw.github.io/portfolio/og-image.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person",
+   "name":"Yan Naing Kyaw",
+   "jobTitle":"Senior Network, Cloud & Infrastructure Engineer",
+   "email":"mailto:ynk.engineer@gmail.com",
+   "url":"https://yannnaingkyaw.github.io/portfolio/",
+   "address":{"@type":"PostalAddress","addressLocality":"Bangkok","addressCountry":"TH"},
+   "knowsAbout":["MPLS","IS-IS","MP-BGP","Cisco ACI","Cisco HyperFlex","VMware vCenter","Data centre design","Private cloud","Network security","Smart City platforms"],
+   "worksFor":{"@type":"Organization","name":"Innoflex"}}
+  </script>
+
 <meta name="description" content="Senior Network & Solution Engineer. Fifteen years across nationwide ISP core, private cloud, data centre and Smart City platforms — Cisco HyperFlex, ACI, UCS, VMware, MPLS, BGP, FTD/ASA, Zabbix.">
 <meta name="author" content="Yan Naing Kyaw">
 <meta property="og:type" content="profile">
@@ -14,6 +40,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b0d10'/><text x='50' y='67' font-size='46' font-family='system-ui' font-weight='600' fill='%23f3f1f6' text-anchor='middle'>Y</text></svg>">
 <style>
+  @font-face{font-family:"Manrope";src:url("assets/Manrope.woff2") format("woff2");
+    font-weight:200 800;font-style:normal;font-display:swap}
   :root{
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
     --void:#0b0d10;
@@ -23,11 +51,11 @@
     --dimmer:#6b7688;
     --line:rgba(255,255,255,.10);
     --line-2:rgba(255,255,255,.06);
-    --steel:#8fb8e8;
+    --steel:#668eab;
     --navy:#1a2a4a;
     --glass:rgba(255,255,255,.045);
     --glass-2:rgba(255,255,255,.028);
-    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    --sans:"Manrope",ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -36,18 +64,19 @@
     font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
-  ::selection{background:rgba(143,184,232,.28)}
+  ::selection{background:rgba(102,142,171,.28)}
   .wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 80px}
   @media (max-width:900px){.wrap{padding:0 24px}}
 
   /* ---------- progress ---------- */
+  a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--steel);outline-offset:4px}
   .prog{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--steel),#fff);z-index:200;transition:width .1s linear}
 
   /* ---------- nav capsule ---------- */
   .navwrap{position:fixed;top:18px;left:0;right:0;z-index:120;display:flex;justify-content:center;padding:0 20px}
   .nav{
     display:flex;align-items:center;gap:6px;padding:7px 8px 7px 16px;border-radius:999px;
-    background:rgba(16,19,24,.72);border:1px solid var(--line);backdrop-filter:blur(18px) saturate(160%);
+    background:rgba(18,19,22,.72);border:1px solid var(--line);backdrop-filter:blur(18px) saturate(160%);
     box-shadow:0 18px 50px rgba(0,0,0,.5);
   }
   .mono{font-weight:700;font-size:14px;letter-spacing:-.02em;margin-right:10px}
@@ -60,13 +89,23 @@
   }
   .nav .pill span{display:inline-block;width:15px;height:15px;border-radius:50%;background:#0b0d10;color:#fff;font-size:10px;line-height:15px;text-align:center}
   @media (max-width:860px){.nav a.lnk{display:none}}
+  @media (max-width:640px){
+    .nav{background:rgba(12,13,16,.97)}
+    .flowbar{display:grid;grid-template-columns:1fr 1fr}
+    .met{min-width:0;padding:14px 16px}
+    .met:nth-child(2n){border-right:none}
+    .met:nth-child(n+3){border-top:1px solid var(--line-2)}
+    .met:last-child{grid-column:1/-1;border-right:none;border-top:1px solid var(--line-2)}
+    .flowbtn{position:static;margin:14px 16px 2px;width:calc(100% - 32px);text-align:center}
+    .flowlegend{gap:14px;padding:14px 16px 8px}
+  }
 
   /* ---------- hero ---------- */
   header{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:120px 0 60px}
   .glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
-  .g1{width:820px;height:820px;left:50%;top:-280px;transform:translateX(-50%);background:radial-gradient(circle,rgba(42,68,110,.55),transparent 66%)}
-  .g2{width:620px;height:620px;left:-160px;bottom:-220px;background:radial-gradient(circle,rgba(26,42,74,.6),transparent 68%)}
-  .g3{width:560px;height:560px;right:-180px;top:120px;background:radial-gradient(circle,rgba(52,44,70,.45),transparent 70%)}
+  .g1{width:820px;height:820px;left:50%;top:-280px;transform:translateX(-50%);background:radial-gradient(circle,rgba(24,60,88,.55),transparent 66%)}
+  .g2{width:620px;height:620px;left:-160px;bottom:-220px;background:radial-gradient(circle,rgba(20,38,56,.6),transparent 68%)}
+  .g3{width:560px;height:560px;right:-180px;top:120px;background:radial-gradient(circle,rgba(38,48,62,.45),transparent 70%)}
   .grid-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
     background-image:radial-gradient(rgba(255,255,255,.042) 1px,transparent 1px);
     background-size:34px 34px;
@@ -74,10 +113,10 @@
     -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 34%,#000 25%,transparent 78%);}
   .topo{position:absolute;inset:0;z-index:0;opacity:.55;pointer-events:none}
   .topo svg{width:100%;height:100%}
-  .topo path{stroke:rgba(143,184,232,.45);stroke-width:1.1;fill:none;stroke-dasharray:5 8;animation:dash 30s linear infinite}
+  .topo path{stroke:rgba(102,142,171,.45);stroke-width:1.1;fill:none;stroke-dasharray:5 8;animation:dash 30s linear infinite}
   @keyframes dash{to{stroke-dashoffset:-320}}
-  .topo circle{fill:rgba(143,184,232,.8)}
-  .topo .pkt{fill:#dbe9fb;filter:drop-shadow(0 0 6px rgba(143,184,232,.95))}
+  .topo circle{fill:rgba(102,142,171,.8)}
+  .topo .pkt{fill:#cfe0f0;filter:drop-shadow(0 0 6px rgba(102,142,171,.95))}
   .topo circle.p{animation:pulse 3.4s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:.35;r:3.2}50%{opacity:1;r:5}}
 
@@ -102,8 +141,8 @@
   .btn-ghost{border:1px solid rgba(255,255,255,.18);color:var(--ink);background:var(--glass)}
   .btn-ghost:hover{background:rgba(255,255,255,.09)}
   .avail{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#9aa4b2;margin-top:24px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--steel);box-shadow:0 0 0 0 rgba(143,184,232,.6);animation:ping 2.6s ease-out infinite}
-  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(143,184,232,.5)}70%{box-shadow:0 0 0 9px rgba(143,184,232,0)}100%{box-shadow:0 0 0 0 rgba(143,184,232,0)}}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--steel);box-shadow:0 0 0 0 rgba(102,142,171,.6);animation:ping 2.6s ease-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(102,142,171,.5)}70%{box-shadow:0 0 0 9px rgba(102,142,171,0)}100%{box-shadow:0 0 0 0 rgba(102,142,171,0)}}
 
   .float{
     width:100%;padding:16px 17px;border-radius:15px;font-size:12.5px;color:#c3ccd8;
@@ -118,12 +157,6 @@
   .float .row span{color:#9dabbd}
   .float .row span:last-child{color:#d3dae4}
   @media (max-width:1240px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:44px}.rail{display:none}}
-
-  /* ---------- marquee ---------- */
-  .marq{border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);overflow:hidden;padding:18px 0;background:rgba(255,255,255,.012)}
-  .marq .track{display:flex;gap:56px;width:max-content;animation:slide 42s linear infinite}
-  .marq span{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#7b8697;white-space:nowrap}
-  @keyframes slide{to{transform:translateX(-50%)}}
 
   /* ---------- sections ---------- */
   section{position:relative;padding:120px 0}
@@ -154,21 +187,21 @@
     background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.014));
     overflow:hidden;transition:.25s;
   }
-  .cap:hover{border-color:rgba(143,184,232,.34);transform:translateY(-3px)}
-  .cap::after{content:"";position:absolute;inset:0;border-radius:18px;background:radial-gradient(120% 90% at 50% -20%,rgba(143,184,232,.16),transparent 60%);opacity:0;transition:.3s}
+  .cap:hover{border-color:rgba(102,142,171,.34);transform:translateY(-3px)}
+  .cap::after{content:"";position:absolute;inset:0;border-radius:18px;background:radial-gradient(120% 90% at 50% -20%,rgba(102,142,171,.16),transparent 60%);opacity:0;transition:.3s}
   .cap:hover::after{opacity:1}
   .cap .ix{font-size:11px;color:var(--dimmer);letter-spacing:.14em;margin-bottom:16px}
   .cap h3{margin:0 0 9px;font-size:18px;letter-spacing:-.02em;font-weight:600;position:relative;z-index:1}
   .cap p{margin:0;font-size:13.8px;color:#98a2b1;line-height:1.6;position:relative;z-index:1}
   .cap .meter{margin-top:18px;height:2px;background:rgba(255,255,255,.09);border-radius:2px;overflow:hidden}
-  .cap .meter i{display:block;height:100%;background:linear-gradient(90deg,var(--steel),rgba(143,184,232,.35));width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+  .cap .meter i{display:block;height:100%;background:linear-gradient(90deg,var(--steel),rgba(102,142,171,.35));width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
   .cap.in .meter i{width:var(--w)}
   @media (max-width:980px){.caps{grid-template-columns:1fr 1fr}}
   @media (max-width:640px){.caps{grid-template-columns:1fr}}
 
   /* ---------- live flow ---------- */
   .flowbox{position:relative;border-radius:22px;border:1px solid var(--line);overflow:hidden;
-    background:radial-gradient(120% 120% at 50% 0%,rgba(32,52,84,.55),rgba(11,13,16,.9) 62%)}
+    background:radial-gradient(120% 120% at 50% 0%,rgba(20,40,60,.55),rgba(11,13,16,.9) 62%)}
   .flowbar{display:flex;gap:0;border-bottom:1px solid var(--line-2);flex-wrap:wrap}
   .met{padding:16px 22px;border-right:1px solid var(--line-2);min-width:150px}
   .met:last-child{border-right:none}
@@ -176,11 +209,15 @@
   .met .val{font-size:22px;letter-spacing:-.02em;font-weight:560;font-variant-numeric:tabular-nums}
   .met .val u{text-decoration:none;color:#a4b0c1;font-size:12.5px;font-weight:500;margin-left:4px}
   .met.ok .val{color:#eaf0f8}
-  .flowcanvas{display:block;width:100%;height:auto}
+  .flowscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .flowcanvas{display:block;width:100%;height:auto;min-width:720px}
+  .gl-core{color:#7aa3c4}
+  .gl-up{color:#9fc4e4}
+  .node-up{fill:#9fc4e4}
   .flowlegend{display:flex;gap:24px;flex-wrap:wrap;padding:16px 22px 10px;font-size:13px;color:#a4b0c1;align-items:center}
   .flowlegend b{color:#dbe2ec;font-weight:600}
   .flowlegend .sw{display:inline-block;width:18px;height:2.5px;background:var(--steel);margin-right:8px;vertical-align:middle;border-radius:2px}
-  .flowlegend .dt{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e8f1fd;margin-right:8px;vertical-align:middle;box-shadow:0 0 6px rgba(143,184,232,.9)}
+  .flowlegend .dt{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e8f1fd;margin-right:8px;vertical-align:middle;box-shadow:0 0 6px rgba(102,142,171,.9)}
   .flowlegend .sw.dn{background:#f08a76;height:0;border-top:2.5px dashed #f08a76}
   .flownote{padding:0 22px 18px;font-size:12.5px;color:#8b96a5;opacity:.85}
   .eventbar{display:flex;align-items:center;gap:10px;margin:0 22px 16px;padding:11px 14px;border-radius:11px;
@@ -192,8 +229,8 @@
     color:#c2cad6;border:1px solid var(--line);border-radius:999px;padding:7px 13px;background:rgba(255,255,255,.05);cursor:pointer}
   .flowbtn:hover{background:rgba(255,255,255,.11)}
   .link-down{stroke:#f08a76!important;stroke-width:2.8!important;stroke-dasharray:6 6!important;opacity:1}
-  .node-up{fill:#8fb8e8}
-  .node-core{fill:#dbe9fb}
+  .node-up{fill:#668eab}
+  .node-core{fill:#cfe0f0}
 
   /* ---------- terminal ---------- */
   .term-wrap{max-width:760px;margin:0 0 56px}
@@ -223,15 +260,15 @@
   .routeline{position:absolute;left:23px;top:6px;bottom:26px;width:2px;
     background-image:linear-gradient(180deg,rgba(255,255,255,.22) 0 6px,transparent 6px 13px);
     background-size:2px 13px;background-repeat:repeat-y}
-  .routefill{position:absolute;left:0;top:0;width:2px;height:0;background:linear-gradient(180deg,#8fb8e8,rgba(143,184,232,.5));
-    box-shadow:0 0 14px rgba(143,184,232,.55);transition:height .12s linear}
+  .routefill{position:absolute;left:0;top:0;width:2px;height:0;background:linear-gradient(180deg,#668eab,rgba(102,142,171,.5));
+    box-shadow:0 0 14px rgba(102,142,171,.55);transition:height .12s linear}
   .job{position:relative}
   .hop{position:absolute;left:-89px;top:0;width:36px;height:36px;border-radius:10px;
     display:grid;place-items:center;color:#5b6575;background:#0e1218;border:1px solid rgba(255,255,255,.12);
     transition:color .5s,border-color .5s,box-shadow .5s,background .5s}
   .hop svg{width:22px;height:22px}
-  .hop.lit{color:#8fb8e8;border-color:rgba(143,184,232,.55);background:#101823;
-    box-shadow:0 0 0 4px rgba(143,184,232,.10),0 0 22px rgba(143,184,232,.28)}
+  .hop.lit{color:#668eab;border-color:rgba(102,142,171,.55);background:#101823;
+    box-shadow:0 0 0 4px rgba(102,142,171,.10),0 0 22px rgba(102,142,171,.28)}
   .hoplink{position:absolute;left:-89px;transform:translateX(-100%) rotate(-90deg);transform-origin:right center;
     font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;color:#7c8798;white-space:nowrap;display:none}
   @media (max-width:900px){
@@ -256,11 +293,11 @@
   .wc{
     position:relative;border-radius:20px;padding:30px 28px 26px;border:1px solid var(--line-2);
     background:
-      radial-gradient(120% 100% at 0% 0%,rgba(42,68,110,.45),transparent 62%),
+      radial-gradient(120% 100% at 0% 0%,rgba(24,60,88,.45),transparent 62%),
       linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));
     display:flex;flex-direction:column;min-height:290px;overflow:hidden;transition:.3s;
   }
-  .wc:hover{transform:translateY(-4px);border-color:rgba(143,184,232,.3)}
+  .wc:hover{transform:translateY(-4px);border-color:rgba(102,142,171,.3)}
   .wc .tag{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#93a2b6;margin:0 0 16px;font-weight:650}
   .wc h3{margin:0 0 12px;font-size:22px;line-height:1.2;letter-spacing:-.025em;font-weight:540;max-width:22ch}
   .wc p{margin:0 0 22px;font-size:14px;color:#a9b3c1;line-height:1.62}
@@ -268,6 +305,23 @@
   .wc .figs div{font-size:11px;letter-spacing:.06em;color:#8996a7;text-transform:uppercase}
   .wc .figs b{display:block;font-size:19px;color:#fff;letter-spacing:-.02em;font-weight:600;text-transform:none;margin-bottom:3px}
   @media (max-width:820px){.work{grid-template-columns:1fr}}
+
+  .wc-rows{margin:0;display:grid;gap:9px;flex:1}
+  .wc-row{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:baseline}
+  .wc-row dt{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#8ba0b8;font-weight:650;margin:0}
+  .wc-row dd{margin:0;font-size:13.4px;color:#bcc6d3;line-height:1.55}
+  .wc{min-height:0;padding:28px 26px 24px}
+  .wc h3{margin:0 0 16px}
+  .wc-anchor{opacity:0;text-decoration:none;color:#668eab;font-weight:500;margin-left:6px;transition:opacity .2s}
+  .wc:hover .wc-anchor,.wc-anchor:focus-visible{opacity:1}
+  @media (max-width:640px){.wc-row{grid-template-columns:1fr;gap:2px}}
+
+  .toolmerge{margin-top:18px;padding-top:26px;border-top:1px solid rgba(255,255,255,.09)}
+  .toolhead{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8ba0b8;margin:0 0 12px;font-weight:650}
+
+  .arch{margin:0 0 18px;padding:6px 4px 2px;border-radius:12px;
+    background:rgba(255,255,255,.022);border:1px solid rgba(255,255,255,.07);overflow-x:auto}
+  .arch svg{width:100%;height:auto;display:block;min-width:460px}
 
   /* ---------- method ---------- */
   .meth{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line-2)}
@@ -299,7 +353,7 @@
 
   /* ---------- contact ---------- */
   footer{position:relative;padding:130px 0 60px;overflow:hidden;border-top:1px solid var(--line-2)}
-  footer .g4{width:900px;height:900px;left:50%;bottom:-620px;transform:translateX(-50%);background:radial-gradient(circle,rgba(42,68,110,.6),transparent 66%)}
+  footer .g4{width:900px;height:900px;left:50%;bottom:-620px;transform:translateX(-50%);background:radial-gradient(circle,rgba(24,60,88,.6),transparent 66%)}
   .contact{position:relative;z-index:2;text-align:center}
   footer h2{margin:0 auto 18px;max-width:24ch}
   .cmail{display:inline-block;font-size:clamp(18px,2.6vw,30px);letter-spacing:-.03em;font-weight:540;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px;margin:26px 0 22px;transition:.2s}
@@ -309,6 +363,17 @@
   .avatar-row{display:inline-flex;align-items:center;gap:12px;margin:34px 0 6px;font-size:13.5px;color:#9aa4b2}
   .avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.22)}
   .foot{margin-top:80px;padding-top:22px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#6f7a8b}
+
+  @media (max-width:640px){
+    .flowbtn{position:static;display:block;margin:16px 16px 4px;width:calc(100% - 32px);text-align:center}
+    .flowbar{display:grid;grid-template-columns:1fr 1fr}
+    .met{min-width:0;padding:14px 16px;border-right:1px solid var(--line-2)}
+    .met:nth-child(2n){border-right:none}
+    .met:nth-child(n+3){border-top:1px solid var(--line-2)}
+    .met:last-child{grid-column:1/-1;border-right:none;border-top:1px solid var(--line-2)}
+    .flowlegend{gap:14px;padding:14px 16px 8px}
+    .eventbar{margin:0 16px 14px}
+  }
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -323,11 +388,10 @@
 <div class="navwrap">
   <nav class="nav">
     <div class="mono">ynk<i>.</i></div>
-    <a class="lnk" href="#numbers">Numbers</a>
-    <a class="lnk" href="#capability">Capability</a>
+    <a class="lnk" href="#work">Work</a>
     <a class="lnk" href="#survives">Resilience</a>
     <a class="lnk" href="#experience">Experience</a>
-    <a class="lnk" href="#work">Work</a>
+    <a class="lnk" href="#capability">Capability</a>
     <a class="lnk" href="#method">Operations</a>
     <a class="pill" href="#contact">Let's talk <span>→</span></a>
   </nav>
@@ -411,26 +475,163 @@
     <p class="kick rv"><b>01</b> Numbers<i></i></p>
     <h2 class="rv">The short version, in four lines.</h2>
     <div class="nums" style="margin-top:44px">
-      <div class="num rv"><div class="v"><span class="count" data-to="15">0</span> <u>yrs</u></div><div class="t">ISP core, data centre and private cloud, since 2011</div></div>
-      <div class="num rv"><div class="v"><span class="count" data-to="400">0</span><u>G</u></div><div class="t">Backbone capacity planned and upgraded, up from 160G</div></div>
+      <div class="num rv"><div class="v"><span class="count" data-to="15">15</span> <u>yrs</u></div><div class="t">ISP core, data centre and private cloud, since 2011</div></div>
+      <div class="num rv"><div class="v"><span class="count" data-to="400">400</span><u>G</u></div><div class="t">Backbone capacity planned and upgraded, up from 160G</div></div>
       <div class="num rv"><div class="v">Millions</div><div class="t">Subscribers on networks I operated and defended</div></div>
       <div class="num rv"><div class="v">ENARSI</div><div class="t">Cisco certified · CCIE Service Provider &amp; EI trained</div></div>
     </div>
   </div>
 </section>
 
-<section id="capability">
+<section id="work">
   <div class="wrap">
-    <p class="kick rv"><b>02</b> Capability<i></i></p>
-    <h2 class="rv">Six disciplines, one engineer across the whole stack.</h2>
-    <p class="sub rv">From the fibre and the BGP session up through the hypervisor, the firewall and the video platform — and on into the specification and the costing that fund it.</p>
-    <div class="caps">
-      <div class="cap rv" style="--w:96%"><div class="ix">01</div><h3>ISP core &amp; routing</h3><p>BGP, OSPF, IS-IS, MPLS, MP-BGP, TE, QoS. IP Transit, VPN, FTTH, DIA and IGW peering with global CDNs.</p><div class="meter"><i></i></div></div>
-      <div class="cap rv" style="--w:92%"><div class="ix">02</div><h3>Cloud &amp; virtualisation</h3><p>Cisco HyperFlex HCI, UCS, VMware vCenter/ESXi, private cloud and MicroCloud, including KVM and software-defined storage.</p><div class="meter"><i></i></div></div>
-      <div class="cap rv" style="--w:88%"><div class="ix">03</div><h3>Data centre &amp; automation</h3><p>Cisco ACI policy-driven networking, UCS Manager, FWaaS, SD-WAN, workload migration and infrastructure hardening.</p><div class="meter"><i></i></div></div>
-      <div class="cap rv" style="--w:86%"><div class="ix">04</div><h3>Security</h3><p>Cisco FTD/ASA/FMC and FortiGate, plus IAM, PAM and XDR governance frameworks for enterprise and academia.</p><div class="meter"><i></i></div></div>
-      <div class="cap rv" style="--w:82%"><div class="ix">05</div><h3>Smart City &amp; AI video</h3><p>AI VMS (Eocortex, Scylla AI), facial recognition, object detection and GPU-enabled edge and data-centre inference.</p><div class="meter"><i></i></div></div>
-      <div class="cap rv" style="--w:78%"><div class="ix">06</div><h3>Monitoring &amp; pre-sales</h3><p>Zabbix, SNMP, Cacti — plus specifications, TOR responses, BOM workbooks and cost models that survive a bid.</p><div class="meter"><i></i></div></div>
+    <p class="kick rv"><b>02</b> Selected work<i></i></p>
+    <h2 class="rv">Four engagements, and what they had to survive.</h2>
+    <p class="sub rv">Customer names withheld where the work sits under NDA. Each case is told the same way: the problem, my part, the approach, the scale, and what keeps it running.</p>
+    <div class="work">
+      <article class="wc rv" id="case-isp-core">
+        <p class="tag">ISP core · National scale</p>
+        <h3>MPLS core and international gateway build-out <a class="wc-anchor" href="#case-isp-core" aria-label="Direct link to this case">#</a></h3>
+        <figure class="arch"><svg viewBox="0 0 560 200" role="img" aria-label="160G → 400G backbone · IS-IS L2">
+<defs><marker id="ah-isp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(120,163,196,.95)"/></marker></defs>
+<text x="280" y="17" fill="#7d8b9e" font-size="12" letter-spacing=".10em" text-anchor="middle">160G → 400G backbone · IS-IS L2</text>
+<line x1="74" y1="101" x2="219" y2="68" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-isp)"/>
+<line x1="74" y1="107" x2="219" y2="140" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-isp)"/>
+<line x1="237" y1="68" x2="383" y2="100" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-isp)"/>
+<text x="310.0" y="76.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">MP-BGP</text>
+<line x1="237" y1="140" x2="383" y2="108" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-isp)"/>
+<line x1="401" y1="98" x2="481" y2="56" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-isp)"/>
+<text x="441.0" y="71.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">eBGP</text>
+<line x1="401" y1="110" x2="481" y2="152" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-isp)"/>
+<circle cx="64" cy="104" r="9" fill="#101720" stroke="#7aa3c4" stroke-width="1.8"/>
+<text x="64" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">ACCESS</text>
+<circle cx="228" cy="64" r="9" fill="#101720" stroke="#7aa3c4" stroke-width="1.8"/>
+<text x="228" y="96" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">CORE A</text>
+<circle cx="228" cy="144" r="9" fill="#101720" stroke="#7aa3c4" stroke-width="1.8"/>
+<text x="228" y="176" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">CORE B</text>
+<circle cx="392" cy="104" r="9" fill="#101720" stroke="#7aa3c4" stroke-width="1.8"/>
+<text x="392" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">PEERING</text>
+<rect x="481" y="41" width="38" height="22" rx="5" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="500" y="84" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">IGW</text>
+<rect x="481" y="145" width="38" height="22" rx="5" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="500" y="188" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">CDN</text>
+</svg>
+        <dl class="wc-rows">
+            <div class="wc-row"><dt>Problem</dt><dd>Subscriber traffic shifted to video and CDN-hosted content, and the backbone had to grow without breaking existing services.</dd></div>
+            <div class="wc-row"><dt>My role</dt><dd>Senior Core Network Engineer — owned the core and IGW design decisions, and was the L3 escalation point when the national network broke.</dd></div>
+            <div class="wc-row"><dt>Trade-off</dt><dd>Every change landed on live subscriber traffic, so capacity and new peers had to be added without a cutover that could take the core down.</dd></div>
+            <div class="wc-row"><dt>Approach</dt><dd>MPLS core on IS-IS and MP-BGP with traffic engineering and QoS; IGW built with eBGP/iBGP peering to global CDNs; POP expansion and multi-service platforms for redundancy.</dd></div>
+            <div class="wc-row"><dt>Scale</dt><dd>160G to 400G backbone upgrades; networks carrying millions of subscribers.</dd></div>
+            <div class="wc-row"><dt>Kept running</dt><dd>Capacity planned ahead of saturation, redundant paths per POP, and named escalation ownership when the country notices an outage.</dd></div>
+        </dl>
+      </article>
+      <article class="wc rv" id="case-private-cloud">
+        <p class="tag">Private cloud · Enterprise</p>
+        <h3>Data centre replacement on Cisco HyperFlex and UCS <a class="wc-anchor" href="#case-private-cloud" aria-label="Direct link to this case">#</a></h3>
+        <figure class="arch"><svg viewBox="0 0 560 200" role="img" aria-label="41 VMs · 133 vCPU · 13.6 TB usable">
+<defs><marker id="ah-cloud" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(120,163,196,.95)"/></marker></defs>
+<text x="280" y="17" fill="#7d8b9e" font-size="12" letter-spacing=".10em" text-anchor="middle">41 VMs · 133 vCPU · 13.6 TB usable</text>
+<line x1="87" y1="104" x2="186" y2="104" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-cloud)"/>
+<text x="136.5" y="97.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">10G</text>
+<line x1="225" y1="98" x2="337" y2="74" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-cloud)"/>
+<text x="281.0" y="79.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">40G</text>
+<line x1="225" y1="110" x2="337" y2="146" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-cloud)"/>
+<text x="281.0" y="135.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">40G</text>
+<line x1="384" y1="72" x2="473" y2="98" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-cloud)"/>
+<text x="428.5" y="77.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">SDS</text>
+<line x1="384" y1="148" x2="473" y2="110" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-cloud)"/>
+<text x="428.5" y="137.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">SDS</text>
+<line x1="206" y1="165" x2="300" y2="140" stroke="rgba(120,163,196,.55)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#ah-cloud)"/>
+<text x="253.0" y="148.5" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">manage</text>
+<rect x="38" y="91" width="48" height="26" rx="6" fill="#0e1116" stroke="rgba(255,255,255,.22)" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="62" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">USERS</text>
+<rect x="187" y="93" width="38" height="22" rx="5" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="206" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">ACI</text>
+<rect x="337" y="59" width="46" height="26" rx="12" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="360" y="104" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">HYPERFLEX</text>
+<rect x="337" y="135" width="46" height="26" rx="12" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="360" y="180" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">UCS</text>
+<rect x="473" y="91" width="46" height="26" rx="12" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="496" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">SDF</text>
+<rect x="187" y="167" width="38" height="22" rx="5" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="206" y="210" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">vCENTER</text>
+</svg>
+        <dl class="wc-rows">
+            <div class="wc-row"><dt>Problem</dt><dd>An end-of-life server estate had to be consolidated, with a way to add capacity in small steps instead of whole racks.</dd></div>
+            <div class="wc-row"><dt>My role</dt><dd>Network and solution engineer on the build, later technical consultant lead on the design — platform and sizing choices were mine to defend to the customer.</dd></div>
+            <div class="wc-row"><dt>Trade-off</dt><dd>Growth had to come in small increments on a fixed data-centre footprint, which decided HCI over a conventional SAN-and-blades refresh.</dd></div>
+            <div class="wc-row"><dt>Approach</dt><dd>Cisco HyperFlex HCI on UCS with VMware vCenter, software-defined storage for growth by node, ACI for policy-driven fabric, plus workload migration and hardening plans.</dd></div>
+            <div class="wc-row"><dt>Scale</dt><dd>41 VMs, 133 vCPU, 503 GB RAM, 13.6 TB usable storage — figures under owner review.</dd></div>
+            <div class="wc-row"><dt>Kept running</dt><dd>Multi-tenant segmentation across VLANs, VPNs and firewall policy, with the hardening plan applied before migration, not after.</dd></div>
+        </dl>
+      </article>
+      <article class="wc rv" id="case-backup">
+        <p class="tag">Backup & retention</p>
+        <h3>Repository with immutability enforced on write <a class="wc-anchor" href="#case-backup" aria-label="Direct link to this case">#</a></h3>
+        <figure class="arch"><svg viewBox="0 0 560 200" role="img" aria-label="108 TB raw · 90 / 30 day retention">
+<defs><marker id="ah-backup" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(120,163,196,.95)"/></marker></defs>
+<text x="280" y="17" fill="#7d8b9e" font-size="12" letter-spacing=".10em" text-anchor="middle">108 TB raw · 90 / 30 day retention</text>
+<line x1="91" y1="104" x2="202" y2="104" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-backup)"/>
+<text x="146.5" y="96.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">agents</text>
+<line x1="242" y1="104" x2="350" y2="104" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-backup)"/>
+<text x="296.0" y="96.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">RAID-6</text>
+<line x1="397" y1="104" x2="476" y2="104" stroke="rgba(120,163,196,.55)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#ah-backup)"/>
+<text x="436.5" y="96.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">copy</text>
+<rect x="42" y="91" width="48" height="26" rx="6" fill="#0e1116" stroke="rgba(255,255,255,.22)" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="66" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">WORKLOADS</text>
+<rect x="203" y="93" width="38" height="22" rx="5" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="222" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">BACKUP</text>
+<rect x="351" y="91" width="46" height="26" rx="12" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="374" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">REPO</text>
+<rect x="477" y="91" width="46" height="26" rx="12" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="500" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">OFF-SITE</text>
+</svg>
+        <dl class="wc-rows">
+            <div class="wc-row"><dt>Problem</dt><dd>Recovery copies could be deleted by an operator mistake, and no retention window had been agreed with the business.</dd></div>
+            <div class="wc-row"><dt>My role</dt><dd>Designed the backup target and sized the repository inside the data-centre refresh.</dd></div>
+            <div class="wc-row"><dt>Trade-off</dt><dd>The copy had to survive an operator deleting the wrong thing, so immutability was pushed into the storage layer instead of being left to backup accounts.</dd></div>
+            <div class="wc-row"><dt>Approach</dt><dd>RAID-6 repository with tiered retention, immutability enforced at the storage layer, and workload backup handled by agents rather than a single choke point.</dd></div>
+            <div class="wc-row"><dt>Scale</dt><dd>108 TB raw repository, 90 / 30 day retention tiers — figures under owner review.</dd></div>
+            <div class="wc-row"><dt>Kept running</dt><dd>The recovery copy is separated from production and cannot be rewritten, so an accident in production is not also an accident in the backup.</dd></div>
+        </dl>
+      </article>
+      <article class="wc rv" id="case-smartcity">
+        <p class="tag">Smart City · Surveillance & AI</p>
+        <h3>Video platform carrying AI inference at the edge <a class="wc-anchor" href="#case-smartcity" aria-label="Direct link to this case">#</a></h3>
+        <figure class="arch"><svg viewBox="0 0 560 200" role="img" aria-label="Video and IoT isolated from office">
+<defs><marker id="ah-city" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(120,163,196,.95)"/></marker></defs>
+<text x="280" y="17" fill="#7d8b9e" font-size="12" letter-spacing=".10em" text-anchor="middle">Video and IoT isolated from office</text>
+<line x1="89" y1="56" x2="207" y2="99" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-city)"/>
+<text x="148.0" y="71.5" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">stream</text>
+<line x1="89" y1="146" x2="207" y2="109" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-city)"/>
+<text x="148.0" y="137.5" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">telemetry</text>
+<line x1="245" y1="104" x2="359" y2="104" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-city)"/>
+<text x="302.0" y="97.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">inference</text>
+<line x1="397" y1="104" x2="477" y2="104" stroke="rgba(120,163,196,.55)" stroke-width="1.6" marker-end="url(#ah-city)"/>
+<text x="437.0" y="97.0" fill="#a8b6c6" font-size="12.5" letter-spacing=".05em" text-anchor="middle" style="paint-order:stroke" stroke="#0c0d10" stroke-width="4">HA link</text>
+<line x1="226" y1="169" x2="226" y2="117" stroke="rgba(120,163,196,.55)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#ah-city)"/>
+<rect x="40" y="41" width="48" height="26" rx="6" fill="#0e1116" stroke="rgba(255,255,255,.22)" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="64" y="86" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">CAMERAS</text>
+<rect x="40" y="135" width="48" height="26" rx="6" fill="#0e1116" stroke="rgba(255,255,255,.22)" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="64" y="180" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">IOT</text>
+<rect x="207" y="93" width="38" height="22" rx="5" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="226" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">EDGE</text>
+<rect x="359" y="93" width="38" height="22" rx="5" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="378" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">AI VMS</text>
+<rect x="477" y="91" width="46" height="26" rx="12" fill="#101720" stroke="#7aa3c4" stroke-width="1.5"/>
+<text x="500" y="136" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">PRIVATE CLOUD</text>
+<rect x="202" y="169" width="48" height="26" rx="6" fill="#0e1116" stroke="rgba(255,255,255,.22)" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="226" y="214" fill="#b3c0ce" font-size="12.5" letter-spacing=".07em" text-anchor="middle">OFFICE LAN</text>
+</svg>
+        <dl class="wc-rows">
+            <div class="wc-row"><dt>Problem</dt><dd>Urban surveillance with AI analytics needs compute near the cameras, without putting cameras and sensors on the office network.</dd></div>
+            <div class="wc-row"><dt>My role</dt><dd>Network and platform design across edge sites and the data centre, integrating with the VMS and AI analytics stack.</dd></div>
+            <div class="wc-row"><dt>Trade-off</dt><dd>Inference had to sit near the cameras without putting cameras and IoT on the office network or backhauling every stream to the data centre.</dd></div>
+            <div class="wc-row"><dt>Approach</dt><dd>A segmented video and IoT plane, GPU-enabled inference at the edge and in the data centre, AI VMS (Eocortex, Scylla AI), all under central management.</dd></div>
+            <div class="wc-row"><dt>Scale</dt><dd>Multi-site cameras, IoT sensors and inference nodes.</dd></div>
+            <div class="wc-row"><dt>Kept running</dt><dd>Video and IoT isolated from office traffic, with high-availability links from edge to data centre to private cloud.</dd></div>
+        </dl>
+      </article>
     </div>
   </div>
 </section>
@@ -451,8 +652,20 @@
         <div class="met"><div class="k">Latency</div><div class="val"><span id="mLat">0.94</span><u>ms</u></div></div>
       </div>
 
-      <svg class="flowcanvas" viewBox="0 0 1100 340" preserveAspectRatio="none" aria-hidden="true">
-        <g id="links" stroke="rgba(143,184,232,.42)" stroke-width="1.4" fill="none">
+      <div class="flowscroll"><svg class="flowcanvas" viewBox="0 0 1100 340" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <g id="glyph-router">
+            <rect x="-17" y="-11" width="34" height="22" rx="7" fill="#0f141b" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M-8,4 L-8,-4 M-10.5,-1.5 L-8,-4 L-5.5,-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8,-4 L8,4 M5.5,1.5 L8,4 L10.5,1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g id="glyph-server">
+            <rect x="-15" y="-13" width="30" height="26" rx="4" fill="#0f141b" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M-9,-5h18M-9,0h18" stroke="currentColor" stroke-width="1.5" opacity=".75"/>
+            <circle cx="-9" cy="6" r="1.8" fill="currentColor" opacity=".9"/>
+          </g>
+        </defs>
+        <g id="links" stroke="rgba(102,142,171,.42)" stroke-width="1.4" fill="none">
           <path id="L1" d="M120,170 L420,90"/>
           <path id="L2" d="M120,170 L420,250"/>
           <path id="L3" d="M420,90 L680,170"/>
@@ -461,10 +674,12 @@
           <path id="L6" d="M680,170 L960,240"/>
         </g>
         <g class="nodes">
-          <circle class="node-core" cx="120" cy="170" r="9"/>
-          <circle class="node-core" cx="420" cy="90" r="7"/><circle class="node-core" cx="420" cy="250" r="7"/>
-          <circle class="node-up" cx="680" cy="170" r="9"/>
-          <circle class="node-core" cx="960" cy="110" r="7"/><circle class="node-core" cx="960" cy="240" r="7"/>
+          <g transform="translate(120,170)"><use href="#glyph-router" class="gl-core"/></g>
+          <g transform="translate(420,90)"><use href="#glyph-router" class="gl-core"/></g>
+          <g transform="translate(420,250)"><use href="#glyph-router" class="gl-core"/></g>
+          <g transform="translate(680,170)"><use href="#glyph-router" class="gl-up"/></g>
+          <g transform="translate(960,110)"><use href="#glyph-server" class="gl-core"/></g>
+          <g transform="translate(960,240)"><use href="#glyph-server" class="gl-core"/></g>
         </g>
         <g fill="#9dabbd" font-size="12" letter-spacing="1.5" font-family="ui-sans-serif,system-ui" text-anchor="middle">
           <text x="120" y="200">EDGE</text>
@@ -475,14 +690,14 @@
           <text x="960" y="272">DC 2</text>
         </g>
         <g id="packets"></g>
-      </svg>
+      </svg></div>
 
       <div class="flowlegend">
         <span><i class="dt"></i><b>packet in flight</b></span>
         <span><i class="sw"></i><b>forwarding link</b></span>
         <span><i class="sw dn"></i><b>link down</b></span>
       </div>
-      <div class="eventbar" id="eventbar"><i></i><span id="eventline">Steady state — no reconvergence in the last minute</span><span class="age" id="evage">live</span></div>
+      <div class="eventbar" id="eventbar"><i></i><span id="eventline">Steady state — no reconvergence in the last minute</span><span class="age" id="evage">sim</span></div>
       <div class="flownote">Synthetic demo of the design principles — not live telemetry from a production network.</div>
     </div>
   </div>
@@ -562,43 +777,9 @@
   </div>
 </section>
 
-<section id="work">
-  <div class="wrap">
-    <p class="kick rv"><b>05</b> Selected work<i></i></p>
-    <h2 class="rv">Four engagements, and what they had to survive.</h2>
-    <p class="sub rv">Customer names withheld where the work sits under NDA. The figures are the ones that decided the design.</p>
-    <div class="work">
-      <div class="wc rv">
-        <p class="tag">Private cloud · Enterprise</p>
-        <h3>Data centre replacement on Cisco HyperFlex and UCS</h3>
-        <p>A nodal design replacing an end-of-life server estate, with software-defined storage and orchestration so capacity grows a node at a time instead of a rack at a time.</p>
-        <div class="figs"><div><b>41</b>VMs consolidated</div><div><b>133</b>vCPU · 503 GB</div><div><b>13.6 TB</b>usable</div></div>
-      </div>
-      <div class="wc rv">
-        <p class="tag">Backup &amp; retention</p>
-        <h3>Repository with immutability enforced on write</h3>
-        <p>RAID-6 repository sized for a defined retention window, with immutability enforced at the storage layer so an operator mistake cannot delete the recovery copy.</p>
-        <div class="figs"><div><b>108 TB</b>raw</div><div><b>90 / 30 d</b>tiers</div><div><b>Immutable</b>WORM</div></div>
-      </div>
-      <div class="wc rv">
-        <p class="tag">Smart City · Surveillance &amp; AI</p>
-        <h3>Video platform carrying AI inference at the edge</h3>
-        <p>Network and GPU design for urban surveillance — every camera, sensor and inference node reachable, segmented and centrally managed, with the video plane never touching the office plane.</p>
-        <div class="figs"><div><b>AI VMS</b>Eocortex · Scylla</div><div><b>Edge + DC</b>GPU inference</div><div><b>Segmented</b>IoT &amp; video</div></div>
-      </div>
-      <div class="wc rv">
-        <p class="tag">ISP core · National scale</p>
-        <h3>MPLS core and international gateway build-out</h3>
-        <p>IS-IS and MP-BGP design with traffic engineering and QoS, peering with the CDNs that carry most of the traffic, and escalation ownership when the whole country notices an outage.</p>
-        <div class="figs"><div><b>160G → 400G</b>backbone</div><div><b>IGW</b>eBGP / iBGP</div><div><b>Millions</b>subscribers</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="method">
   <div class="wrap">
-    <p class="kick rv"><b>06</b> Operations<i></i></p>
+    <p class="kick rv"><b>05</b> Operations<i></i></p>
     <h2 class="rv">The work after the deployment.</h2>
     <p class="sub rv">Most infrastructure fails in month nine, not on cutover day. These are the habits that keep it alive.</p>
     <div class="meth">
@@ -612,10 +793,24 @@
   </div>
 </section>
 
-<section id="toolkit">
+<section id="capability">
   <div class="wrap">
-    <p class="kick rv"><b>07</b> Toolkit<i></i></p>
-    <h2 class="rv">What I work with.</h2>
+    <p class="kick rv"><b>06</b> Capability<i></i></p>
+    <h2 class="rv">Six disciplines, one engineer across the whole stack.</h2>
+    <p class="sub rv">From the fibre and the BGP session up through the hypervisor, the firewall and the video platform — and on into the specification and the costing that fund it.</p>
+    <div class="caps">
+      <div class="cap rv" style="--w:96%"><div class="ix">01</div><h3>ISP core &amp; routing</h3><p>BGP, OSPF, IS-IS, MPLS, MP-BGP, TE, QoS. IP Transit, VPN, FTTH, DIA and IGW peering with global CDNs.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:92%"><div class="ix">02</div><h3>Cloud &amp; virtualisation</h3><p>Cisco HyperFlex HCI, UCS, VMware vCenter/ESXi, private cloud and MicroCloud, including KVM and software-defined storage.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:88%"><div class="ix">03</div><h3>Data centre &amp; automation</h3><p>Cisco ACI policy-driven networking, UCS Manager, FWaaS, SD-WAN, workload migration and infrastructure hardening.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:86%"><div class="ix">04</div><h3>Security</h3><p>Cisco FTD/ASA/FMC and FortiGate, plus IAM, PAM and XDR governance frameworks for enterprise and academia.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:82%"><div class="ix">05</div><h3>Smart City &amp; AI video</h3><p>AI VMS (Eocortex, Scylla AI), facial recognition, object detection and GPU-enabled edge and data-centre inference.</p><div class="meter"><i></i></div></div>
+      <div class="cap rv" style="--w:78%"><div class="ix">06</div><h3>Monitoring &amp; pre-sales</h3><p>Zabbix, SNMP, Cacti — plus specifications, TOR responses, BOM workbooks and cost models that survive a bid.</p><div class="meter"><i></i></div></div>
+    </div>
+    <div class="toolmerge rv">
+      <p class="toolhead">Products, platforms and languages, used hands-on</p>
+<div class="wrap">
+    
+    
     <div class="tools" style="margin-top:52px">
       <div class="tool rv"><b>Networking</b><span>BGP, OSPF, IS-IS, MPLS, MP-BGP, SD-WAN, VPN, VLAN, L2/L3 design</span></div>
       <div class="tool rv"><b>Cloud</b><span>Cisco HyperFlex (HCI), Cisco UCS, VMware vCenter/ESXi, Private Cloud, MicroCloud</span></div>
@@ -627,11 +822,14 @@
       <div class="tool rv"><b>Languages</b><span>English, Burmese</span></div>
     </div>
   </div>
+    </div>
+
+  </div>
 </section>
 
 <section id="credentials">
   <div class="wrap">
-    <p class="kick rv"><b>08</b> Credentials<i></i></p>
+    <p class="kick rv"><b>07</b> Credentials<i></i></p>
     <h2 class="rv">Certified, trained, and hands on the hardware.</h2>
     <div class="creds" style="margin-top:44px">
       <div class="cred rv"><div class="t">Certified</div><h3>Cisco Certified Specialist — ENARSI</h3><p>Enterprise Advanced Routing &amp; Services</p></div>
@@ -649,7 +847,7 @@
 <footer id="contact">
   <div class="glow g4"></div>
   <div class="wrap contact">
-    <p class="kick rv" style="justify-content:center"><b>09</b> Contact</p>
+    <p class="kick rv" style="justify-content:center"><b>08</b> Contact</p>
     <h2 class="rv">Let's talk about the network you cannot afford to lose.</h2>
     <p class="sub rv" style="margin:0 auto 8px;text-align:center">Datacentre modernisation, private cloud, ISP and enterprise routing, Smart City and video platforms — or the specification and costing work in front of the bid.</p>
     <div class="rv avatar-row"><img class="avatar" src="ynk_photo.png" alt="Yan Naing Kyaw"><span>Yan Naing Kyaw · Technical Consultant Lead, Bangkok</span></div>
@@ -791,7 +989,7 @@
         if (el) el.classList.remove('link-down');
         bar.classList.remove('alarm');
         ev.textContent = 'Steady state — no reconvergence in the last minute';
-        document.getElementById('evage').textContent = 'live';
+        document.getElementById('evage').textContent = 'sim';
       }, 2800);
     }
     document.getElementById('killBtn').addEventListener('click', failover);
@@ -921,6 +1119,8 @@
       if (!e.isIntersecting || seen.has(e.target)) return;
       seen.add(e.target);
       const el = e.target, to = +el.dataset.to, t0 = performance.now(), dur = 1300;
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = to; return; }
+      el.textContent = '0';
       const step = (t) => {
         const p = Math.min((t - t0) / dur, 1);
         el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
