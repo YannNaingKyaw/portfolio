@@ -76,6 +76,7 @@
   .topo path{stroke:rgba(143,184,232,.45);stroke-width:1.1;fill:none;stroke-dasharray:5 8;animation:dash 30s linear infinite}
   @keyframes dash{to{stroke-dashoffset:-320}}
   .topo circle{fill:rgba(143,184,232,.8)}
+  .topo .pkt{fill:#dbe9fb;filter:drop-shadow(0 0 6px rgba(143,184,232,.95))}
   .topo circle.p{animation:pulse 3.4s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:.35;r:3.2}50%{opacity:1;r:5}}
 
@@ -164,6 +165,35 @@
   @media (max-width:980px){.caps{grid-template-columns:1fr 1fr}}
   @media (max-width:640px){.caps{grid-template-columns:1fr}}
 
+  /* ---------- live flow ---------- */
+  .flowbox{position:relative;border-radius:22px;border:1px solid var(--line);overflow:hidden;
+    background:radial-gradient(120% 120% at 50% 0%,rgba(32,52,84,.55),rgba(11,13,16,.9) 62%)}
+  .flowbar{display:flex;gap:0;border-bottom:1px solid var(--line-2);flex-wrap:wrap}
+  .met{padding:16px 22px;border-right:1px solid var(--line-2);min-width:150px}
+  .met:last-child{border-right:none}
+  .met .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#9dabbd;margin-bottom:6px}
+  .met .val{font-size:22px;letter-spacing:-.02em;font-weight:560;font-variant-numeric:tabular-nums}
+  .met .val u{text-decoration:none;color:#a4b0c1;font-size:12.5px;font-weight:500;margin-left:4px}
+  .met.ok .val{color:#eaf0f8}
+  .flowcanvas{display:block;width:100%;height:auto}
+  .flowlegend{display:flex;gap:24px;flex-wrap:wrap;padding:16px 22px 10px;font-size:13px;color:#a4b0c1;align-items:center}
+  .flowlegend b{color:#dbe2ec;font-weight:600}
+  .flowlegend .sw{display:inline-block;width:18px;height:2.5px;background:var(--steel);margin-right:8px;vertical-align:middle;border-radius:2px}
+  .flowlegend .dt{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e8f1fd;margin-right:8px;vertical-align:middle;box-shadow:0 0 6px rgba(143,184,232,.9)}
+  .flowlegend .sw.dn{background:#f08a76;height:0;border-top:2.5px dashed #f08a76}
+  .flownote{padding:0 22px 18px;font-size:12.5px;color:#8b96a5;opacity:.85}
+  .eventbar{display:flex;align-items:center;gap:10px;margin:0 22px 16px;padding:11px 14px;border-radius:11px;
+    background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);font-size:13px;color:#c2cad6}
+  .eventbar i{width:7px;height:7px;border-radius:50%;background:#7fd6a8;display:inline-block;flex:none;transition:.3s}
+  .eventbar.alarm i{background:#f08a76;box-shadow:0 0 0 4px rgba(240,138,118,.14)}
+  .eventbar .age{margin-left:auto;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#8b96a5}
+  .flowbtn{position:absolute;top:14px;right:16px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:#c2cad6;border:1px solid var(--line);border-radius:999px;padding:7px 13px;background:rgba(255,255,255,.05);cursor:pointer}
+  .flowbtn:hover{background:rgba(255,255,255,.11)}
+  .link-down{stroke:#f08a76!important;stroke-width:2.8!important;stroke-dasharray:6 6!important;opacity:1}
+  .node-up{fill:#8fb8e8}
+  .node-core{fill:#dbe9fb}
+
   /* ---------- experience ---------- */
   .job{display:grid;grid-template-columns:200px 1fr;gap:44px;padding:44px 0;border-top:1px solid var(--line-2)}
   .job:first-of-type{border-top:none;padding-top:0}
@@ -250,6 +280,7 @@
     <div class="mono">ynk<i>.</i></div>
     <a class="lnk" href="#numbers">Numbers</a>
     <a class="lnk" href="#capability">Capability</a>
+    <a class="lnk" href="#survives">Resilience</a>
     <a class="lnk" href="#experience">Experience</a>
     <a class="lnk" href="#work">Work</a>
     <a class="lnk" href="#method">Operations</a>
@@ -265,8 +296,11 @@
 
   <div class="topo" aria-hidden="true">
     <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-      <path d="M-40,700 C180,640 300,730 470,660 S700,560 880,620 1120,700 1480,600"/>
-      <path d="M-40,230 C200,150 340,260 520,190 S780,110 960,200 1200,270 1480,180"/>
+      <path id="hp1" d="M-40,700 C180,640 300,730 470,660 S700,560 880,620 1120,700 1480,600"/>
+      <path id="hp2" d="M-40,230 C200,150 340,260 520,190 S780,110 960,200 1200,270 1480,180"/>
+      <circle class="pkt" r="2.6"><animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#hp1"/></animateMotion></circle>
+      <circle class="pkt" r="2.2" style="animation-delay:-3s"><animateMotion dur="13s" begin="-3s" repeatCount="indefinite"><mpath href="#hp1"/></animateMotion></circle>
+      <circle class="pkt" r="2.4"><animateMotion dur="11s" begin="-6s" repeatCount="indefinite"><mpath href="#hp2"/></animateMotion></circle>
       <circle class="p" cx="120" cy="672" r="3.4"/>
       <circle class="p" cx="470" cy="660" r="3.4" style="animation-delay:.7s"/>
       <circle class="p" cx="880" cy="620" r="3.4" style="animation-delay:1.3s"/>
@@ -356,9 +390,62 @@
   </div>
 </section>
 
+<section id="survives">
+  <div class="wrap">
+    <p class="kick rv"><b>03</b> Resilience<i></i></p>
+    <h2 class="rv">Traffic does not stop when a link does.</h2>
+    <p class="sub rv">Two edges, two cores, two data centres — and one path always left standing. Kill a link below and watch the packets re-route while the session counter never resets.</p>
+
+    <div class="flowbox rv">
+      <button class="flowbtn" id="killBtn">Kill a link</button>
+      <div class="flowbar">
+        <div class="met ok"><div class="k">Throughput</div><div class="val"><span id="mThr">398</span><u>Gbps</u></div></div>
+        <div class="met ok"><div class="k">BGP sessions</div><div class="val"><span id="mPeer">24</span><u>of 24 up</u></div></div>
+        <div class="met"><div class="k">Session uptime</div><div class="val"><span id="mUp">0</span><u>s</u></div></div>
+        <div class="met ok"><div class="k">Flaps</div><div class="val">0</div></div>
+        <div class="met"><div class="k">Latency</div><div class="val"><span id="mLat">0.94</span><u>ms</u></div></div>
+      </div>
+
+      <svg class="flowcanvas" viewBox="0 0 1100 340" preserveAspectRatio="none" aria-hidden="true">
+        <g id="links" stroke="rgba(143,184,232,.42)" stroke-width="1.4" fill="none">
+          <path id="L1" d="M120,170 L420,90"/>
+          <path id="L2" d="M120,170 L420,250"/>
+          <path id="L3" d="M420,90 L680,170"/>
+          <path id="L4" d="M420,250 L680,170"/>
+          <path id="L5" d="M680,170 L960,110"/>
+          <path id="L6" d="M680,170 L960,240"/>
+        </g>
+        <g class="nodes">
+          <circle class="node-core" cx="120" cy="170" r="9"/>
+          <circle class="node-core" cx="420" cy="90" r="7"/><circle class="node-core" cx="420" cy="250" r="7"/>
+          <circle class="node-up" cx="680" cy="170" r="9"/>
+          <circle class="node-core" cx="960" cy="110" r="7"/><circle class="node-core" cx="960" cy="240" r="7"/>
+        </g>
+        <g fill="#9dabbd" font-size="12" letter-spacing="1.5" font-family="ui-sans-serif,system-ui" text-anchor="middle">
+          <text x="120" y="200">EDGE</text>
+          <text x="420" y="60">CORE A</text>
+          <text x="420" y="282">CORE B</text>
+          <text x="680" y="146">PEERING</text>
+          <text x="960" y="86">DC 1</text>
+          <text x="960" y="272">DC 2</text>
+        </g>
+        <g id="packets"></g>
+      </svg>
+
+      <div class="flowlegend">
+        <span><i class="dt"></i><b>packet in flight</b></span>
+        <span><i class="sw"></i><b>forwarding link</b></span>
+        <span><i class="sw dn"></i><b>link down</b></span>
+      </div>
+      <div class="eventbar" id="eventbar"><i></i><span id="eventline">Steady state — no reconvergence in the last minute</span><span class="age" id="evage">live</span></div>
+      <div class="flownote">Synthetic demo of the design principles — not live telemetry from a production network.</div>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <div class="wrap">
-    <p class="kick rv"><b>03</b> Experience<i></i></p>
+    <p class="kick rv"><b>04</b> Experience<i></i></p>
     <h2 class="rv">Where the years went.</h2>
     <p class="sub rv">Eleven of them keeping a national ISP core alive. The rest building the private clouds and platforms that sit on top of it.</p>
 
@@ -417,7 +504,7 @@
 
 <section id="work">
   <div class="wrap">
-    <p class="kick rv"><b>04</b> Selected work<i></i></p>
+    <p class="kick rv"><b>05</b> Selected work<i></i></p>
     <h2 class="rv">Four engagements, and what they had to survive.</h2>
     <p class="sub rv">Customer names withheld where the work sits under NDA. The figures are the ones that decided the design.</p>
     <div class="work">
@@ -451,7 +538,7 @@
 
 <section id="method">
   <div class="wrap">
-    <p class="kick rv"><b>05</b> Operations<i></i></p>
+    <p class="kick rv"><b>06</b> Operations<i></i></p>
     <h2 class="rv">The work after the deployment.</h2>
     <p class="sub rv">Most infrastructure fails in month nine, not on cutover day. These are the habits that keep it alive.</p>
     <div class="meth">
@@ -467,7 +554,7 @@
 
 <section id="toolkit">
   <div class="wrap">
-    <p class="kick rv"><b>06</b> Toolkit<i></i></p>
+    <p class="kick rv"><b>07</b> Toolkit<i></i></p>
     <h2 class="rv">What I work with.</h2>
     <div class="tools" style="margin-top:52px">
       <div class="tool rv"><b>Networking</b><span>BGP, OSPF, IS-IS, MPLS, MP-BGP, SD-WAN, VPN, VLAN, L2/L3 design</span></div>
@@ -484,7 +571,7 @@
 
 <section id="credentials">
   <div class="wrap">
-    <p class="kick rv"><b>07</b> Credentials<i></i></p>
+    <p class="kick rv"><b>08</b> Credentials<i></i></p>
     <h2 class="rv">Certified, trained, and hands on the hardware.</h2>
     <div class="creds" style="margin-top:44px">
       <div class="cred rv"><div class="t">Certified</div><h3>Cisco Certified Specialist — ENARSI</h3><p>Enterprise Advanced Routing &amp; Services</p></div>
@@ -502,7 +589,7 @@
 <footer id="contact">
   <div class="glow g4"></div>
   <div class="wrap contact">
-    <p class="kick rv" style="justify-content:center"><b>08</b> Contact</p>
+    <p class="kick rv" style="justify-content:center"><b>09</b> Contact</p>
     <h2 class="rv">Let's talk about the network you cannot afford to lose.</h2>
     <p class="sub rv" style="margin:0 auto 8px;text-align:center">Datacentre modernisation, private cloud, ISP and enterprise routing, Smart City and video platforms — or the specification and costing work in front of the bid.</p>
     <div class="rv avatar-row"><img class="avatar" src="ynk_photo.png" alt="Yan Naing Kyaw"><span>Yan Naing Kyaw · Technical Consultant Lead, Bangkok</span></div>
@@ -544,6 +631,112 @@
     });
   }, {threshold:.16, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // ---------- live flow: packets that re-route on link failure ----------
+  (function(){
+    const svg = document.querySelector('.flowcanvas');
+    if (!svg) return;
+    const NS = 'http://www.w3.org/2000/svg';
+    const P = {
+      edge:{x:120,y:170},
+      ca:{x:420,y:90}, cb:{x:420,y:250},
+      peer:{x:680,y:170},
+      dc1:{x:960,y:110}, dc2:{x:960,y:240}
+    };
+    // routes: primary uses CORE A, backup uses CORE B
+    const routes = {
+      primary: [['edge','ca'],['ca','peer'],['peer','dc1']],
+      backup:  [['edge','cb'],['cb','peer'],['peer','dc2']],
+      mixedA:  [['edge','ca'],['ca','peer'],['peer','dc2']],
+      mixedB:  [['edge','cb'],['cb','peer'],['peer','dc1']]
+    };
+    const linkEls = {  // map of link key -> svg path element
+      'edge-ca': 'L1', 'edge-cb': 'L2', 'ca-peer': 'L3', 'cb-peer': 'L4', 'peer-dc1': 'L5', 'peer-dc2': 'L6'
+    };
+    const down = new Set();
+    const group = document.getElementById('packets');
+    const ev = document.getElementById('eventline');
+    const uptimeEl = document.getElementById('mUp');
+    const thrEl = document.getElementById('mThr');
+    const latEl = document.getElementById('mLat');
+
+    let t0 = performance.now();
+    function tickMetrics(){
+      const s = (performance.now() - t0)/1000;
+      uptimeEl.textContent = Math.floor(s).toLocaleString();
+      const base = down.size ? 386 : 398;
+      thrEl.textContent = Math.round(base + Math.sin(s/2.2)*6 + Math.random()*2);
+      latEl.textContent = (down.size ? 1.42 : 0.94 + Math.sin(s/3.1)*0.06).toFixed(2);
+    }
+    setInterval(tickMetrics, 1000);
+
+    function pickRoute(){
+      const alive = r => r.every(([a,b]) => !down.has(a+'-'+b));
+      const ok = ['primary','backup','mixedA','mixedB'].filter(k => alive(routes[k]));
+      return ok.length ? routes[ok[Math.floor(Math.random()*ok.length)]] : null;
+    }
+
+    const packets = [];
+    for (let i=0;i<14;i++){
+      const c = document.createElementNS(NS,'circle');
+      c.setAttribute('r', 2.4 + Math.random()*1.4);
+      c.setAttribute('fill','#e8f1fd');
+      c.setAttribute('opacity','.92');
+      group.appendChild(c);
+      packets.push({el:c, route:pickRoute(), leg:0, t:Math.random(), speed:0.0022+Math.random()*0.0016});
+    }
+
+    function pointOn(seg, t){
+      const [a,b] = seg, A=P[a], B=P[b];
+      return {x: A.x + (B.x-A.x)*t, y: A.y + (B.y-A.y)*t};
+    }
+
+    function frame(){
+      packets.forEach(p => {
+        if (!p.route){ p.route = pickRoute(); p.leg = 0; p.t = 0; }
+        p.t += p.speed;
+        if (p.t >= 1){ p.t = 0; p.leg++; if (p.leg >= p.route.length){ p.leg = 0; const r = pickRoute(); p.route = r || p.route; } }
+        const seg = p.route[p.leg];
+        if (down.has(seg[0]+'-'+seg[1])) { const r = pickRoute(); if (r){ p.route = r; p.leg = 0; p.t = 0; } }
+        const pt = pointOn(p.route[p.leg], p.t);
+        p.el.setAttribute('cx', pt.x); p.el.setAttribute('cy', pt.y);
+      });
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+
+    function setDown(key){
+      down.add(key);
+      const el = document.getElementById(linkEls[key]);
+      if (el) el.classList.add('link-down');
+    }
+    function heal(){
+      down.clear();
+      Object.values(linkEls).forEach(id => document.getElementById(id).classList.remove('link-down'));
+    }
+    function failover(){
+      heal();
+      const cands = Object.keys(linkEls);
+      const key = cands[Math.floor(Math.random()*cands.length)];
+      setDown(key);
+      const ms = 28 + Math.floor(Math.random()*34);
+      const bar = document.getElementById('eventbar');
+      const nice = key.split('-').map(x=>({edge:'EDGE',ca:'CORE A',cb:'CORE B',peer:'PEERING',dc1:'DC 1',dc2:'DC 2'}[x]||x)).join(' → ');
+      bar.classList.add('alarm');
+      ev.innerHTML = '<b style="color:#f08a76">' + nice + ' down</b> &nbsp;·&nbsp; FRR reconverged in ' + ms + ' ms &nbsp;·&nbsp; no session reset';
+      document.getElementById('evage').textContent = 'now';
+      setTimeout(() => {
+        down.delete(key);
+        const el = document.getElementById(linkEls[key]);
+        if (el) el.classList.remove('link-down');
+        bar.classList.remove('alarm');
+        ev.textContent = 'Steady state — no reconvergence in the last minute';
+        document.getElementById('evage').textContent = 'live';
+      }, 2800);
+    }
+    document.getElementById('killBtn').addEventListener('click', failover);
+    setInterval(failover, 11000);
+  })();
 
   // count up
   const seen = new WeakSet();
