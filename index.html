@@ -380,6 +380,18 @@
     .eventbar{margin:0 16px 14px}
   }
 
+  
+  /* platform marquee */
+  .marq{position:relative;overflow:hidden;background:rgba(255,255,255,.014);
+    border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);
+    padding:15px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .marq .track{display:flex;width:max-content;align-items:center;
+    animation:marq 46s linear infinite;will-change:transform}
+  .marq .track span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#8b96a5;
+    padding:0 27px;white-space:nowrap;border-right:1px solid rgba(255,255,255,.07)}
+  .marq:hover .track{animation-play-state:paused}
+  @keyframes marq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .rv{opacity:1;transform:none}
