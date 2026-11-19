@@ -4,17 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yan Naing Kyaw — Networks that cannot go down</title>
-<meta name="description" content="Senior Network & Solution Engineer. Fourteen years across nationwide ISP core, private cloud, data centre and Smart City platforms — Cisco HyperFlex, ACI, UCS, VMware, MPLS, BGP, FTD/ASA, Zabbix.">
+<meta name="description" content="Senior Network & Solution Engineer. Fifteen years across nationwide ISP core, private cloud, data centre and Smart City platforms — Cisco HyperFlex, ACI, UCS, VMware, MPLS, BGP, FTD/ASA, Zabbix.">
 <meta name="author" content="Yan Naing Kyaw">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Yan Naing Kyaw — Senior Network & Solution Engineer">
-<meta property="og:description" content="Fourteen years of networks that cannot go down: ISP core, private cloud, data centre, Smart City.">
+<meta property="og:description" content="Fifteen years of networks that cannot go down: ISP core, private cloud, data centre, Smart City.">
 <meta property="og:image" content="ynk_photo.png">
 <meta property="og:url" content="https://yannnaingkyaw.github.io/portfolio/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b0d10'/><text x='50' y='67' font-size='46' font-family='system-ui' font-weight='600' fill='%23f3f1f6' text-anchor='middle'>Y</text></svg>">
 <style>
   :root{
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
     --void:#0b0d10;
     --void-2:#0f1216;
     --ink:#f3f1f6;
@@ -194,6 +195,50 @@
   .node-up{fill:#8fb8e8}
   .node-core{fill:#dbe9fb}
 
+  /* ---------- terminal ---------- */
+  .term-wrap{max-width:760px;margin:0 0 56px}
+  .term{border-radius:14px;border:1px solid rgba(255,255,255,.12);overflow:hidden;
+    background:linear-gradient(180deg,#0c0f14,#0a0c10);box-shadow:0 26px 60px rgba(0,0,0,.5)}
+  .term-bar{display:flex;align-items:center;gap:7px;padding:10px 13px;border-bottom:1px solid rgba(255,255,255,.09);
+    background:rgba(255,255,255,.03)}
+  .term-bar i{width:9px;height:9px;border-radius:50%;background:#3a4351;display:block}
+  .term-bar i:first-child{background:#5a4a4a}
+  .term-bar span{margin-left:8px;font-size:11.5px;letter-spacing:.08em;color:#7f8b9c;font-family:var(--mono)}
+  .term-body{margin:0;padding:16px 17px 18px;font-family:var(--mono);font-size:12.6px;line-height:1.72;
+    color:#c8d2df;overflow-x:auto}
+  .term-body .pr{color:#7fd6a8}
+  .caret{display:inline-block;width:7px;height:14px;background:#c8d2df;vertical-align:-2px;margin-left:2px;animation:blink 1.05s steps(1) infinite}
+  .caret.off{display:none}
+  @keyframes blink{50%{opacity:0}}
+  .t-out{margin-top:10px;white-space:pre;color:#aab6c6}
+  .rowline{display:block;transition:opacity .35s,transform .35s;opacity:1}
+  .rowline.hide{opacity:0;transform:translateY(3px)}
+  .st-est{color:#7fd6a8}
+  .st-idle{color:#f0b775}
+  .term-note{margin-top:11px;font-size:11.5px;color:#697585}
+  @media (max-width:640px){.term-body{font-size:11px}}
+
+  /* ---------- career route ---------- */
+  .routewrap{position:relative;padding-left:96px}
+  .routeline{position:absolute;left:23px;top:6px;bottom:26px;width:2px;
+    background-image:linear-gradient(180deg,rgba(255,255,255,.22) 0 6px,transparent 6px 13px);
+    background-size:2px 13px;background-repeat:repeat-y}
+  .routefill{position:absolute;left:0;top:0;width:2px;height:0;background:linear-gradient(180deg,#8fb8e8,rgba(143,184,232,.5));
+    box-shadow:0 0 14px rgba(143,184,232,.55);transition:height .12s linear}
+  .job{position:relative}
+  .hop{position:absolute;left:-89px;top:0;width:36px;height:36px;border-radius:10px;
+    display:grid;place-items:center;color:#5b6575;background:#0e1218;border:1px solid rgba(255,255,255,.12);
+    transition:color .5s,border-color .5s,box-shadow .5s,background .5s}
+  .hop svg{width:22px;height:22px}
+  .hop.lit{color:#8fb8e8;border-color:rgba(143,184,232,.55);background:#101823;
+    box-shadow:0 0 0 4px rgba(143,184,232,.10),0 0 22px rgba(143,184,232,.28)}
+  .hoplink{position:absolute;left:-89px;transform:translateX(-100%) rotate(-90deg);transform-origin:right center;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;color:#7c8798;white-space:nowrap;display:none}
+  @media (max-width:900px){
+    .routewrap{padding-left:0}
+    .routeline,.hop,.hoplink{display:none}
+  }
+
   /* ---------- experience ---------- */
   .job{display:grid;grid-template-columns:200px 1fr;gap:44px;padding:44px 0;border-top:1px solid var(--line-2)}
   .job:first-of-type{border-top:none;padding-top:0}
@@ -329,7 +374,7 @@
     <div class="hero">
       <p class="eyebrow">Bangkok, Thailand &nbsp;·&nbsp; <b>Senior Network &amp; Solution Engineer</b></p>
       <h1>Networks that <span class="thin">cannot</span> go down.</h1>
-      <p class="hero-lede">Fourteen years across nationwide ISP core, private cloud, data centre and Smart City platforms — the routing, the hypervisor, the firewall and the video plane. I design them, deploy them, and stay for the operating years after.</p>
+      <p class="hero-lede">Fifteen years across nationwide ISP core, private cloud, data centre and Smart City platforms — the routing, the hypervisor, the firewall and the video plane. I design them, deploy them, and stay for the operating years after.</p>
       <div class="hero-ctas">
         <a class="btn btn-solid" href="#work">See selected work &nbsp;→</a>
         <a class="btn btn-ghost" href="Yan_Naing_Kyaw_Senior_Network_Engineer.pdf" download>Download CV</a>
@@ -366,7 +411,7 @@
     <p class="kick rv"><b>01</b> Numbers<i></i></p>
     <h2 class="rv">The short version, in four lines.</h2>
     <div class="nums" style="margin-top:44px">
-      <div class="num rv"><div class="v"><span class="count" data-to="14">0</span> <u>yrs</u></div><div class="t">ISP core, data centre and private cloud, from 2011</div></div>
+      <div class="num rv"><div class="v"><span class="count" data-to="15">0</span> <u>yrs</u></div><div class="t">ISP core, data centre and private cloud, since 2011</div></div>
       <div class="num rv"><div class="v"><span class="count" data-to="400">0</span><u>G</u></div><div class="t">Backbone capacity planned and upgraded, up from 160G</div></div>
       <div class="num rv"><div class="v">Millions</div><div class="t">Subscribers on networks I operated and defended</div></div>
       <div class="num rv"><div class="v">ENARSI</div><div class="t">Cisco certified · CCIE Service Provider &amp; EI trained</div></div>
@@ -449,7 +494,19 @@
     <h2 class="rv">Where the years went.</h2>
     <p class="sub rv">Eleven of them keeping a national ISP core alive. The rest building the private clouds and platforms that sit on top of it.</p>
 
+    <div class="term-wrap rv">
+      <div class="term">
+        <div class="term-bar"><i></i><i></i><i></i><span>ynk@core-01 · ios-xe · ssh</span></div>
+        <pre class="term-body"><span class="pr">core-01#</span> <span id="tCmd"></span><span class="caret" id="tCaret"></span><div class="t-out" id="tOut"></div></pre>
+      </div>
+      <div class="term-note">Sample output — not captured from customer equipment. AS numbers are private-range.</div>
+    </div>
+
+    <div class="routewrap" id="route">
+      <div class="routeline"><div class="routefill" id="routeFill"></div></div>
+
     <div class="job rv">
+      <div class="hop" data-hop="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2.6" y="7.4" width="18.8" height="9.2" rx="4.6"/><path d="M8.4 11.1h2.1M13.5 11.1h2.1"/><path d="M8.4 13.4h2.1M13.5 13.4h2.1"/><path d="M8.4 10.6l-.9-1.1M13.5 13.9l.9 1.1"/></svg></div>
       <div class="when"><b>2026 — Present</b>Bangkok, Thailand</div>
       <div>
         <h3>Technical Consultant Lead</h3>
@@ -466,7 +523,8 @@
     </div>
 
     <div class="job rv">
-      <div class="when"><b>June 2024 — Present</b>Bangkok, Thailand</div>
+      <div class="hop" data-hop="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2.6" y="7.4" width="18.8" height="9.2" rx="4.6"/><path d="M8.4 11.1h2.1M13.5 11.1h2.1"/><path d="M8.4 13.4h2.1M13.5 13.4h2.1"/><path d="M8.4 10.6l-.9-1.1M13.5 13.9l.9 1.1"/></svg></div>
+      <div class="when"><b>2024 — 2026</b>Bangkok, Thailand</div>
       <div>
         <h3>Network &amp; Solution Engineer</h3>
         <p class="co">Planetcomm / Planetcloud</p>
@@ -484,7 +542,8 @@
     </div>
 
     <div class="job rv">
-      <div class="when"><b>December 2011 — June 2024</b>Myanmar</div>
+      <div class="hop" data-hop="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2.6" y="7.4" width="18.8" height="9.2" rx="4.6"/><path d="M8.4 11.1h2.1M13.5 11.1h2.1"/><path d="M8.4 13.4h2.1M13.5 13.4h2.1"/><path d="M8.4 10.6l-.9-1.1M13.5 13.9l.9 1.1"/></svg></div>
+      <div class="when"><b>2011 — 2024</b>Myanmar</div>
       <div>
         <h3>Senior Core Network Engineer</h3>
         <p class="co">Global Technology Co., Ltd.</p>
@@ -499,6 +558,7 @@
         </ul>
       </div>
     </div>
+    </div><!-- /routewrap -->
   </div>
 </section>
 
@@ -736,6 +796,122 @@
     }
     document.getElementById('killBtn').addEventListener('click', failover);
     setInterval(failover, 11000);
+  })();
+
+  // ---------- terminal: show bgp summary ----------
+  (function(){
+    const cmdEl = document.getElementById('tCmd');
+    const outEl = document.getElementById('tOut');
+    const caret = document.getElementById('tCaret');
+    if (!cmdEl || !outEl) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const CMD = 'show bgp ipv4 unicast summary';
+    const HEAD1 = 'BGP router identifier 10.255.0.1, local AS number 64999';
+    const HEAD2 = 'BGP table version is 1284477, main routing table version 1284477';
+    const COLS  = 'Neighbor          V      AS  MsgRcvd  MsgSent   TblVer  InQ OutQ  Up/Down  State/PfxRcd';
+    const ROWS = [
+      ['10.0.0.1', 64512,  918,  904, '12w3d',  418, 'est'],
+      ['10.0.0.5', 64513, 1420, 1398, '8w1d',  1042, 'est'],
+      ['10.0.0.9', 64514,  640,  651, '4w5d',    87, 'est'],
+      ['10.0.0.13',64515, 2210, 2190, '21w2d', 3204, 'est'],
+      ['10.0.0.17',64516,   78,   96, '00:04:11', 0, 'idle'],
+      ['10.0.0.21',64517, 1330, 1310, '9w6d',   612, 'est']
+    ];
+    const pad = (v, n, right) => right ? String(v).padStart(n) : String(v).padEnd(n);
+    const rowText = (r) => pad(r[0],17) + pad(4,4,1) + pad(r[1],8,1) + pad(r[2],9,1) + pad(r[3],9,1)
+                      + pad(1284477,9,1) + pad(0,5,1) + pad(0,5,1) + pad(r[4],10,1) + '  ';
+
+    function buildRows(){
+      outEl.innerHTML = '';
+      const h1 = document.createElement('span'); h1.className='rowline'; h1.textContent = HEAD1; outEl.appendChild(h1);
+      const h2 = document.createElement('span'); h2.className='rowline hide'; h2.textContent = HEAD2; outEl.appendChild(h2);
+      const blank = document.createElement('span'); blank.className='rowline hide'; blank.textContent = ' '; outEl.appendChild(blank);
+      const cols = document.createElement('span'); cols.className='rowline hide'; cols.textContent = COLS; outEl.appendChild(cols);
+      const made = ROWS.map((r, i) => {
+        const el = document.createElement('span');
+        el.className = 'rowline hide';
+        el.textContent = rowText(r);
+        const st = document.createElement('span');
+        st.className = 'st-' + (r[6] === 'idle' ? 'idle' : 'est');
+        st.textContent = r[6] === 'idle' ? 'Idle' : r[5];
+        el.appendChild(st);
+        outEl.appendChild(el);
+        return {el, st, row:r};
+      });
+      return made;
+    }
+
+    function finalState(made){
+      made.forEach(m => {
+        m.el.classList.remove('hide');
+        if (m.row[6] === 'idle'){ m.st.className='st-est'; m.st.textContent = m.row[5]; }
+      });
+      outEl.querySelectorAll('.rowline').forEach(e => e.classList.remove('hide'));
+    }
+
+    function run(){
+      const made = buildRows();
+      const lines = [...outEl.querySelectorAll('.rowline')];
+      if (reduce){ cmdEl.textContent = CMD; caret.classList.add('off'); finalState(made); return; }
+      cmdEl.textContent = ''; caret.classList.remove('off');
+      let i = 0;
+      const type = () => {
+        cmdEl.textContent = CMD.slice(0, ++i);
+        if (i < CMD.length) setTimeout(type, 26 + Math.random()*34);
+        else setTimeout(show, 420);
+      };
+      const show = () => {
+        let k = 0;
+        const step = () => {
+          if (k < lines.length){ lines[k].classList.remove('hide'); k++; setTimeout(step, 105); }
+          else { setTimeout(flap, 1250); }
+        };
+        step();
+      };
+      const flap = () => {
+        const idle = made.find(m => m.row[6] === 'idle');
+        if (!idle) return;
+        idle.st.className = 'st-est'; idle.st.textContent = idle.row[5];
+        setTimeout(() => { if (visible) run(); }, 6200);
+      };
+      type();
+    }
+
+    let visible = false;
+    const tio = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting && !visible){ visible = true; run(); }
+        if (!e.isIntersecting) visible = false;
+      });
+    }, {threshold:.25});
+    tio.observe(outEl.closest('.term'));
+  })();
+
+  // ---------- career route: draws as you scroll ----------
+  (function(){
+    const route = document.getElementById('route');
+    const fill = document.getElementById('routeFill');
+    if (!route || !fill) return;
+    const hops = [...route.querySelectorAll('.hop')];
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function update(){
+      const r = route.getBoundingClientRect();
+      const vh = innerHeight;
+      const total = r.height;
+      let drawn = Math.min(Math.max(vh * 0.68 - r.top, 0), total);
+      if (reduce) drawn = total;
+      fill.style.height = drawn + 'px';
+      hops.forEach(h => {
+        const hr = h.getBoundingClientRect();
+        const top = hr.top - r.top;
+        h.classList.toggle('lit', drawn >= top + 8);
+      });
+    }
+    addEventListener('scroll', update, {passive:true});
+    addEventListener('resize', update);
+    setTimeout(update, 400);
+    update();
   })();
 
   // count up
