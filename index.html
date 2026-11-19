@@ -357,9 +357,13 @@
   footer .g4{width:900px;height:900px;left:50%;bottom:-620px;transform:translateX(-50%);background:radial-gradient(circle,rgba(24,60,88,.6),transparent 66%)}
   .contact{position:relative;z-index:2;text-align:center}
   footer h2{margin:0 auto 18px;max-width:24ch}
-  .cmail{display:inline-block;font-size:clamp(18px,2.6vw,30px);letter-spacing:-.03em;font-weight:540;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px;margin:26px 0 22px;transition:.2s}
-  .cmail:hover{border-color:#fff;color:#fff}
-  .cmeta{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;color:#8b96a5;font-size:13.5px;margin-bottom:34px}
+  .cmail{display:flex;width:max-content;margin-left:auto;margin-right:auto;align-items:center;justify-content:center;gap:8px;
+    font-size:clamp(14.5px,1.35vw,17.5px);letter-spacing:.01em;font-weight:600;line-height:1;
+    padding:13px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.03);margin:22px auto 18px;transition:.2s;white-space:nowrap;max-width:100%}
+  .cmail:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.07);color:#fff}
+  @media (max-width:420px){.cmail{font-size:13.5px;padding:12px 16px;letter-spacing:0}}
+  .cmeta{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;color:#8b96a5;font-size:13.5px;margin:0 0 32px}
   .cmeta span b{color:#e6e9ee;font-weight:600}
   .avatar-row{display:inline-flex;align-items:center;gap:12px;margin:34px 0 6px;font-size:13.5px;color:#9aa4b2}
   .avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.22)}
